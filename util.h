@@ -38,6 +38,7 @@ float average(int x, int y);
 
 // 13. Vilca Aguilar Luis
 // root
+float raiz(float a);
 
 // 14. Vinatea Chávez Camilo Jorge
 // power

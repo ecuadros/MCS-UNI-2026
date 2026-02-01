@@ -1,5 +1,5 @@
 #include "util.h"
-
+#include <cmath>
 
 // 1. Bernaola Gayoso - César Raúl
 
@@ -41,7 +41,9 @@ float average(int x, int y){
 
 
 // 13. Vilca Aguilar Luis
-
+float raiz(float a){
+    return sqrt(a);
+}
 
 // 14. Vinatea Chávez Camilo Jorge
 
