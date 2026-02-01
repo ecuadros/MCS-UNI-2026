@@ -1,61 +1,29 @@
-#include <iostream> // cout
+#include <iostream>
 #include "util.h"
 
-// g++ main.cpp util.cpp -o main
-int main(){
-    std::cout << "MCS-2026-PM\n";
-    int x = 20, y = 45, r;
-    float f1, f2, f3;
 
-// 1. Bernaola Gayoso - César Raúl
-
-
-// 2. Cuadros-Vargas Ernesto
-    std::cout << "Demo Cuadros Vargas Ernesto" << std::endl;
-    x = 20, y = 45;
-    intercambiar(x, y);
-    std::cout << "x=" << x << " y=" << y << "\n\n";
-
-// 3. Diaz Tapia Adderly
-// substraction
-    x = 5;
-
-// 4. Lopez Flores Royer Amed
-// multiplication
-
-// 5. López Sandoval, Heiner
-// division
-
-// 6. Mallaupoma Cesar
-// genera un numero aleatorio
-
-// 7. Miranda Zarate Jorge Luis
-// factorial
-
-// 8. Riveros Guevara
-// IsPrime
-
-// 9. Segovia Giancarlo
-// fibonacci
-
-// 10. Suarez Maciel Susana Isabel
-// average()
-    std::cout << "Demo Susana Suarez Maciel" << std::endl;
-    float prom = average(x,y);
-    std::cout << "Promedio(x,y)=" << prom << "\n\n";
-
-// 11. Tellez Jhon
-// sumar 10 numeros naturales
-
-// 12. Valcarcel Julian
-// float round(float f, int n)
-
-// 13. Vilca Aguilar Luis
-// root
-    std::cout << "Demo Vilca Aguilar Luis" << std::endl;
-    f1 = 23.0;
-    raiz(f1);
-    std::cout << "La raiz de (" << f1 << ")=" << raiz(f1) << "\n\n";
+int main() {
+    // 1. Código original de la clase (Ernesto)
+    // -------------------------------------------------
+    std::cout << "--- EJEMPLO CLASE (INTERCAMBIAR) ---" << std::endl;
+    int x = 20;
+    int y = 45;
     
+    std::cout << "Antes: x = " << x << ", y = " << y << std::endl;
+    intercambiar(x, y);
+    std::cout << "Despues: x = " << x << ", y = " << y << std::endl;
+    std::cout << std::endl;
+
+ 
+    std::cout << "--- TAREA ALUMNO 12 (REDONDEAR) ---" << std::endl;
+    
+    // Declaramos 
+    double valor1 = 4.6;
+    double valor2 = 4.2;
+
+    // Llama eimprimimos
+    std::cout << "Redondeando " << valor1 << " -> " << redondear(valor1) << std::endl;
+    std::cout << "Redondeando " << valor2 << " -> " << redondear(valor2) << std::endl;
+
     return 0;
 }
