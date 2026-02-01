@@ -25,6 +25,7 @@ void intercambiar(int &a, int &b);
 
 // 9. Segovia Giancarlo
 // fibonacci
+int fibonacci(int n);
 
 // 10. Suarez Maciel Susana Isabel
 // average()
