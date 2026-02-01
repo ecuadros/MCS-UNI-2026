@@ -65,8 +65,8 @@ int main(){
 // 9. Segovia Giancarlo
 // fibonacci
     std::cout << "Demo Giancarlo Segovia" << std::endl;
-    x = 6;
-    std::cout << "Fibonacci de " << x << " es " << fibonacci(x) << "\n\n";
+    p1 = 6;
+    std::cout << "Fibonacci de " << p1 << " es " << fibonacci(p1) << "\n\n";
 
 // 10. Suarez Maciel Susana Isabel
 // average()
@@ -88,7 +88,7 @@ int main(){
     for (int i =0;i>=x;i++)
     {
         suma = suma + i;
-        
+
     }
     std::cout<<"La suma es: "<<suma<< "\n\n";
 
@@ -102,13 +102,13 @@ int main(){
     f1 = 23.0;
     raiz(f1);
     std::cout << "La raiz (" << f1 << ") = " << raiz(f1) << "\n\n";
-  
+
 // 14. Vinatea Chávez Camilo Jorge
     std::cout << "Demo Vinatea Camilo" << std::endl;
-    T14 base = 3.1415; 
+    T14 base = 3.1415;
     T1 exponent = 3;
     T14 result = power(base, exponent);
     std::cout << base << " ^ " << exponent << " = " << result << "\n\n";
-    
+
     return 0;
 }

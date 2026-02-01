@@ -30,7 +30,7 @@ bool esPrimo(int &n);
 
 // 9. Segovia Giancarlo
 // fibonacci
-int fibonacci(int n);
+IntParam fibonacci(IntParam n);
 
 // 10. Suarez Maciel Susana Isabel
 // average()

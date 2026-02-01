@@ -3,7 +3,7 @@
 #include "util.h"
 
 // 1. Bernaola Gayoso - César Raúl
-IntParam addition(IntParam a, IntParam b) { 
+IntParam addition(IntParam a, IntParam b) {
     return a + b;
 }
 
@@ -57,7 +57,7 @@ bool esPrimo(int &n) {
 }
 
 // 9. Segovia Giancarlo
-int fibonacci(int n){
+IntParam fibonacci(IntParam n){
     if(n <= 0) return 0;
     if(n == 1) return 1;
     return fibonacci(n - 1) + fibonacci(n - 2);
