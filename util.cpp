@@ -44,6 +44,17 @@ unsigned int factorial(unsigned int number){
 
 // 8. Riveros Guevara
 
+bool esPrimo(int &n) {
+    if (n <= 1) return false;
+    if (n == 2) return true;
+    if (n % 2 == 0) return false;
+
+    for (int i = 3; i <= sqrt(n); i += 2) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
 
 // 9. Segovia Giancarlo
 int fibonacci(int n){
@@ -66,7 +77,8 @@ float average(int x, int y){
 
 // 13. Vilca Aguilar Luis
 float raiz(float a){
-    return sqrt(a);
+    float res = sqrt(a);
+    return res;
 }
 
 // 14. Vinatea Chávez Camilo Jorge

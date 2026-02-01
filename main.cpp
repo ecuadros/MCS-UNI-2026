@@ -49,6 +49,13 @@ int main(){
 
 // 8. Riveros Guevara
 // IsPrime
+ std::cout << "Demo Cuadros Vargas Ernesto" << std::endl;
+    int n = 29;
+    if (esPrimo(n))
+        std::cout << n << " es primo \n\n";
+    else
+        std::cout << n << " no es primo\n\n";
+
 
 // 9. Segovia Giancarlo
 // fibonacci
@@ -65,17 +72,32 @@ int main(){
 // 11. Tellez Jhon
 // sumar 10 numeros naturales
 
+int suma = 0;
+    std::cout<<"Ingrese el numero 10";
+    std::cin>>x;
+    for (int i =0;i>=x;i++)
+    {
+        suma = suma + i;
+        
+    }
+    std::cout<<"La suma es: "<<suma<< "\n\n";
+
+
 // 12. Valcarcel Julian
 // float round(float f, int n)
 
 // 13. Vilca Aguilar Luis
 // root
-
+    std::cout << "Demo Vilca Aguilar Luis" << std::endl;
+    f1 = 23.0;
+    raiz(f1);
+    std::cout << "La raiz (" << f1 << ") = " << raiz(f1) << "\n\n";
+  
 // 14. Vinatea Chávez Camilo Jorge
     std::cout << "Demo Vinatea Camilo" << std::endl;
     base = 3.1415; exponent = 3;
     result = power(base, exponent);
     std::cout << base << " ^ " << exponent << " = " << result << "\n\n";
-
+    
     return 0;
 }
