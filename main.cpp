@@ -51,7 +51,7 @@ int main(){
 // 8. Riveros Guevara
 // IsPrime
     std::cout << "Demo Riveros Guevara Hipolito" << std::endl;
-    int n = 29;
+    TH n = 29;
     if (esPrimo(n))
         std::cout << n << " es primo \n\n";
     else
