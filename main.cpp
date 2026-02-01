@@ -5,7 +5,7 @@
 // g++ main.cpp util.cpp -o main
 int main(){
     std::cout << "MCS-2026-PM\n";
-    long x = 20, y = 45, r, exponent;
+    int x = 20, y = 45, r, exponent;
     float f1, f2, f3, base, result;
     double d1, d2;
 
@@ -40,7 +40,7 @@ int main(){
 // genera un numero aleatorio
     std::cout << "Demo Cesar Mallaupoma Orellana" << std::endl;
     srand(1);
-    int aleatorio = generarNumAleatorio();
+    IntParam aleatorio = generarNumAleatorio();
         std::cout << "El numero aleatorio generado es "<< aleatorio  << "\n\n";
 
 // 7. Miranda Zarate Jorge Luis

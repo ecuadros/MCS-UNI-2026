@@ -19,7 +19,7 @@ float division(float &f1, float &f2);
 
 // 6. Mallaupoma Cesar
 // genera un numero aleatorio
-int generarNumAleatorio();
+IntParam generarNumAleatorio();
 
 // 7. Miranda Zarate Jorge Luis
 unsigned int factorial(unsigned int number);
