@@ -2,7 +2,7 @@
 #include <cstdlib>
 
 // 1. Bernaola Gayoso - César Raúl
-int addition(int a, int b) {
+int addition(int a, int b) { 
     return a + b;
 }
 
