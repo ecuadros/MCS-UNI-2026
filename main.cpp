@@ -40,6 +40,9 @@ int main(){
 
 // 10. Suarez Maciel Susana Isabel
 // average()
+std::cout << "Demo Susana Suarez Maciel" << std::endl;
+    float prom = average(x,y);
+std::cout << "Promedio(x,y)=" << prom << "\n\n";
 
 // 11. Tellez Jhon
 // sumar 10 numeros naturales

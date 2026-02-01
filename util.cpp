@@ -29,7 +29,10 @@ void intercambiar(int &a, int &b){
 
 
 // 10. Suarez Maciel Susana Isabel
+float average(int x, int y){
+    return (x + y)/2.0f;
 
+}
 
 // 11. Tellez Jhon
 

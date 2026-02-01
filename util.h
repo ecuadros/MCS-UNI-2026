@@ -28,6 +28,7 @@ void intercambiar(int &a, int &b);
 
 // 10. Suarez Maciel Susana Isabel
 // average()
+float average(int x, int y);
 
 // 11. Tellez Jhon
 // sumar 10 numeros naturales
