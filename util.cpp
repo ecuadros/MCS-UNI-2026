@@ -39,7 +39,8 @@ void intercambiar(int &a, int &b){
 
 // 13. Vilca Aguilar Luis
 float raiz(float a){
-    return sqrt(a);
+    float res = sqrt(a);
+    return res;
 }
 
 // 14. Vinatea Chávez Camilo Jorge
