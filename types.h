@@ -25,6 +25,7 @@ using T1 = long;
 // 12. Valcarcel Julian
 
 // 13. Vilca Aguilar Luis
+using F1 = float;
 
 // 14. Vinatea Chávez Camilo Jorge
 

@@ -95,9 +95,8 @@ int main(){
 // 13. Vilca Aguilar Luis
 // root
     std::cout << "Demo Vilca Aguilar Luis" << std::endl;
-    f1 = 23.0;
-    raiz(f1);
-    std::cout << "La raiz (" << f1 << ") = " << raiz(f1) << "\n\n";
+    F1 L1 = 23.0;
+    std::cout << "La raiz (" << L1 << ") = " << raiz(L1) << "\n\n";
   
 // 14. Vinatea Chávez Camilo Jorge
     std::cout << "Demo Vinatea Camilo" << std::endl;

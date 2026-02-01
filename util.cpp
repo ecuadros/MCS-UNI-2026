@@ -80,8 +80,8 @@ float average(int x, int y){
 
 
 // 13. Vilca Aguilar Luis
-float raiz(float a){
-    float res = sqrt(a);
+F1 raiz(F1 a){
+    F1 res = sqrt(a);
     return res;
 }
 
