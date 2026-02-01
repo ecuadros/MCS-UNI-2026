@@ -82,4 +82,10 @@ float raiz(float a){
 }
 
 // 14. Vinatea Chávez Camilo Jorge
-
+float power(float base, int exponent){
+    float result = 1.0;
+    for(int i = 0; i < exponent; ++i){
+        result *= base;
+    }
+    return result;
+}

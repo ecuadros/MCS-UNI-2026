@@ -45,4 +45,4 @@ float average(int x, int y);
 float raiz(float a);
 
 // 14. Vinatea Chávez Camilo Jorge
-// power
+float power(float base, int exponent);
