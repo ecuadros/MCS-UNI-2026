@@ -30,7 +30,9 @@ int main(){
 // genera un numero aleatorio
 
 // 7. Miranda Zarate Jorge Luis
-// factorial
+    std::cout << "Demo Miranda Zarate Jorge" << std::endl;
+    x = 10;
+    std::cout << x << "! = " << factorial(x) << "\n\n";
 
 // 8. Riveros Guevara
 // IsPrime

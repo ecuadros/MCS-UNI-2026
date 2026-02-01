@@ -18,6 +18,7 @@ void intercambiar(int &a, int &b);
 // genera un numero aleatorio
 
 // 7. Miranda Zarate Jorge Luis
+unsigned int factorial(unsigned int number);
 // factorial
 
 // 8. Riveros Guevara

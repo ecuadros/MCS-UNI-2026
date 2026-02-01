@@ -20,7 +20,13 @@ void intercambiar(int &a, int &b){
 
 
 // 7. Miranda Zarate Jorge Luis
-
+unsigned int factorial(unsigned int number){
+    unsigned int result = 1;
+    for(int i=number; i > 0; i--){
+        result *= i;
+    }
+    return result;
+}
 
 // 8. Riveros Guevara
 
