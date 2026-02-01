@@ -11,9 +11,9 @@ int main(){
 
 // 1. Bernaola Gayoso - César Raúl
     std::cout << "Demo Bernaola Gayoso Cesar" << std::endl;
-    x = 10, y = 30;
-    r = addition(x, y);
-    std::cout << "la suma de x=" << x << " y=" << y << " es: " << r << "\n\n";
+    p1 = 10, p2 = 30;
+    p3 = addition(p1, p2);
+    std::cout << "la suma de x=" << p1 << " y=" << p2 << " es: " << p3 << "\n\n";
 
 // 2. Cuadros-Vargas Ernesto
     std::cout << "Demo Cuadros Vargas Ernesto" << std::endl;
@@ -24,18 +24,21 @@ int main(){
 // 3. Diaz Tapia Adderly
 // substraction
     std::cout << "Demo Adderly Díaz Tapia" << std::endl;
-    d1 = 10.1; d2=7.2;
-    std::cout<<"La resta entre X e Y es: " << subtraction(d1, d2) << "\n\n";
+    Ts d1 = 10.1; d2=7.2;
+    std::cout<<"La resta es: " << subtraction(d1, d2) << "\n\n";
 
 // 4. Lopez Flores Royer Amed
 // multiplication
     std::cout << "Demo Lopez Flores Royer Amed" << std::endl;
-    x = 6; y = 7;
-    r = multiplicar(x, y);
-    std::cout << "multiplicar(" << x << "," << y << ")=" << r << "\n\n";
+    MultParam mpx = 6.1, mpy = 7.2;
+    MultParam mpr = multiplicar(mpx, mpy);
+    std::cout << "multiplicar(" << mpx << "," << mpy << ")=" << mpr << "\n\n";
 // 5. López Sandoval, Heiner
 // division
-
+   std::cout << "Demo Lopez Sandoval Heiner" << std::endl;
+    f1 = 40; f2 = 50;
+    f3 = division(f1, f2);
+    std::cout << f1 << "/" << f2 << " = " << f3 << "\n" ;
 // 6. Mallaupoma Cesar
 // genera un numero aleatorio
     std::cout << "Demo Cesar Mallaupoma Orellana" << std::endl;
@@ -51,7 +54,7 @@ int main(){
 // 8. Riveros Guevara
 // IsPrime
     std::cout << "Demo Riveros Guevara Hipolito" << std::endl;
-    int n = 29;
+    TH n = 29;
     if (esPrimo(n))
         std::cout << n << " es primo \n\n";
     else
@@ -101,8 +104,9 @@ int main(){
   
 // 14. Vinatea Chávez Camilo Jorge
     std::cout << "Demo Vinatea Camilo" << std::endl;
-    base = 3.1415; exponent = 3;
-    result = power(base, exponent);
+    T14 base = 3.1415; 
+    T1 exponent = 3;
+    T14 result = power(base, exponent);
     std::cout << base << " ^ " << exponent << " = " << result << "\n\n";
     
     return 0;

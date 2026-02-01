@@ -1,18 +1,17 @@
 #include "types.h"
 
 // 1. Bernaola Gayoso - César Raúl
-long   addition(long a, long b);
-float addition(float a, float b);
+IntParam addition(IntParam a, IntParam b);
 
 // 2. Cuadros-Vargas Ernesto
 void intercambiar(T1 &a, T1 &b);
 
 // 3. Diaz Tapia Adderly
-double subtraction (double n, double m);
+double subtraction (Ts n, Ts m);
 
 // 4. Lopez Flores Royer Amed
 // multiplication
-int multiplicar(int &a, int &b);
+MultParam multiplicar(MultParam &a, MultParam &b);
 // 5. López Sandoval, Heiner
 // division
 float division(float &f1, float &f2);

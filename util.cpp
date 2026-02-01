@@ -3,11 +3,7 @@
 #include "util.h"
 
 // 1. Bernaola Gayoso - César Raúl
-long addition(long a, long b) { 
-    return a + b;
-}
-
-float addition(float a, float b){
+IntParam addition(IntParam a, IntParam b) { 
     return a + b;
 }
 
@@ -19,11 +15,11 @@ void intercambiar(T1 &a, T1 &b){
 }
 
 // 3. Diaz Tapia Adderly
-double subtraction (double n, double m){
+Ts subtraction (Ts n, Ts m){
     return n-m;
 }
 // 4. Lopez Flores Royer Amed
-int multiplicar(int &a, int &b){
+MultParam multiplicar(MultParam &a, MultParam &b){
     return a * b;
 }
 // 5. López Sandoval, Heiner
@@ -86,10 +82,9 @@ float raiz(float a){
 }
 
 // 14. Vinatea Chávez Camilo Jorge
-float power(float base, int exponent){
-    float result = 1.0;
-    for(int i = 0; i < exponent; ++i){
+T14 power(T14 base, T1 exponent){
+    T14 result = 1.0;
+    for(T1 i = 0; i < exponent; ++i)
         result *= base;
-    }
     return result;
 }
