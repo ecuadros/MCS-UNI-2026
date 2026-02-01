@@ -13,6 +13,7 @@ void intercambiar(int &a, int &b);
 
 // 5. López Sandoval, Heiner
 // division
+float division(float &a, float &b) ;
 
 // 6. Mallaupoma Cesar
 // genera un numero aleatorio

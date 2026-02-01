@@ -15,6 +15,12 @@ void intercambiar(int &a, int &b){
 // 4. Lopez Flores Royer Amed
 
 // 5. López Sandoval, Heiner
+float division(float &a, float &b)
+{
+    float r = a/b ;
+    return r ;
+}
+
 
 // 6. Mallaupoma Cesar
 
