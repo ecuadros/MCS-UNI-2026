@@ -1,0 +1,11 @@
+# Una vez
+git remote -v
+git remote add upstream https://github.com/ecuadros/MCS-UNI-2026.git
+git fetch upstream
+
+git checkout -b 01-Main upstream/01-Main
+git checkout -b 02-gitignore upstream/02-gitignore
+git checkout -b 03-MultipleFunctions upstream/03-MultipleFunctions
+
+git fetch upstream
+git checkout -b 04-ABC upstream/04-ABC
