@@ -1,6 +1,5 @@
 #include "util.h"
 
-
 // 1. Bernaola Gayoso - César Raúl
 
 // 2. Cuadros-Vargas Ernesto
@@ -11,7 +10,9 @@ void intercambiar(int &a, int &b){
 }
 
 // 3. Diaz Tapia Adderly
-
+double subtraction (double n, double m){
+    return n-m;
+}
 // 4. Lopez Flores Royer Amed
 int multiplicar(int &a, int &b){
     return a * b;

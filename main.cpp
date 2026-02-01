@@ -18,7 +18,9 @@ int main(){
 
 // 3. Diaz Tapia Adderly
 // substraction
-    x = 5;
+    std::cout << "Demo Adderly Díaz Tapia" << std::endl;
+    x = 10.1; y=7.2;
+    std::cout<<"La resta entre X e Y es: " << subtraction(x,y) << "\n\n";
 
 // 4. Lopez Flores Royer Amed
 // multiplication

@@ -6,7 +6,7 @@
 void intercambiar(int &a, int &b);
 
 // 3. Diaz Tapia Adderly
-// substraction
+double subtraction (double n, double m);
 
 // 4. Lopez Flores Royer Amed
 // multiplication
