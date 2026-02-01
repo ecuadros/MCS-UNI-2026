@@ -52,7 +52,7 @@ int main(){
     std::cout << "Demo Vilca Aguilar Luis" << std::endl;
     f1 = 23.0;
     raiz(f1);
-    std::cout << "La raiz de (" << f1 << ")=" << raiz(f1) << "\n\n";
+    std::cout << "La raiz de (" << f1 << ") = " << raiz(f1) << "\n\n";
     
     return 0;
 }
