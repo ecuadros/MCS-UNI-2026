@@ -26,7 +26,7 @@ unsigned int factorial(unsigned int number);
 
 // 8. Riveros Guevara
 // IsPrime
-bool esPrimo(int &n);
+bool esPrimo(TH &n);
 
 // 9. Segovia Giancarlo
 // fibonacci
