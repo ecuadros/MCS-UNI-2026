@@ -1,14 +1,18 @@
 #include <iostream> // cout
+#include <cstdlib>
 #include "util.h"
 
 // g++ main.cpp util.cpp -o main
 int main(){
     std::cout << "MCS-2026-PM\n";
-    int x = 20, y = 45, r;
-    float f1, f2, f3;
+    int x = 20, y = 45, r, exponent;
+    float f1, f2, f3, base, result;
 
 // 1. Bernaola Gayoso - César Raúl
-
+    std::cout << "Demo Bernaola Gayoso Cesar" << std::endl;
+    x = 10, y = 30;
+    r = addition(x, y);
+    std::cout << "la suma de x=" << x << " y=" << y << " es: " << r << "\n\n";
 
 // 2. Cuadros-Vargas Ernesto
     std::cout << "Demo Cuadros Vargas Ernesto" << std::endl;
@@ -18,19 +22,30 @@ int main(){
 
 // 3. Diaz Tapia Adderly
 // substraction
-    x = 5;
+    std::cout << "Demo Adderly Díaz Tapia" << std::endl;
+    x = 10.1; y=7.2;
+    std::cout<<"La resta entre X e Y es: " << subtraction(x,y) << "\n\n";
 
 // 4. Lopez Flores Royer Amed
 // multiplication
-
+    std::cout << "Demo Lopez Flores Royer Amed" << std::endl;
+    x = 6; y = 7;
+    r = multiplicar(x, y);
+    std::cout << "multiplicar(" << x << "," << y << ")=" << r << "\n\n";
 // 5. López Sandoval, Heiner
 // division
 
 // 6. Mallaupoma Cesar
 // genera un numero aleatorio
+    std::cout << "Demo Cesar Mallaupoma Orellana" << std::endl;
+    srand(1);
+    int aleatorio = generarNumAleatorio();
+        std::cout << "El numero aleatorio generado es "<< aleatorio  << "\n\n";
 
 // 7. Miranda Zarate Jorge Luis
-// factorial
+    std::cout << "Demo Miranda Zarate Jorge" << std::endl;
+    x = 10;
+    std::cout << x << "! = " << factorial(x) << "\n\n";
 
 // 8. Riveros Guevara
 // IsPrime
@@ -44,6 +59,9 @@ int main(){
 
 // 9. Segovia Giancarlo
 // fibonacci
+    std::cout << "Demo Giancarlo Segovia" << std::endl;
+    x = 6;
+    std::cout << "Fibonacci de " << x << " es " << fibonacci(x) << "\n\n";
 
 // 10. Suarez Maciel Susana Isabel
 // average()
@@ -54,6 +72,17 @@ int main(){
 // 11. Tellez Jhon
 // sumar 10 numeros naturales
 
+int suma = 0;
+    std::cout<<"Ingrese el numero 10";
+    std::cin>>x;
+    for (int i =0;i>=x;i++)
+    {
+        suma = suma + i;
+        
+    }
+    std::cout<<"La suma es: "<<suma<< "\n\n";
+
+
 // 12. Valcarcel Julian
 // float round(float f, int n)
 
@@ -62,7 +91,13 @@ int main(){
     std::cout << "Demo Vilca Aguilar Luis" << std::endl;
     f1 = 23.0;
     raiz(f1);
-    std::cout << "La raiz de (" << f1 << ")=" << raiz(f1) << "\n\n";
+    std::cout << "La raiz (" << f1 << ") = " << raiz(f1) << "\n\n";
+  
+// 14. Vinatea Chávez Camilo Jorge
+    std::cout << "Demo Vinatea Camilo" << std::endl;
+    base = 3.1415; exponent = 3;
+    result = power(base, exponent);
+    std::cout << base << " ^ " << exponent << " = " << result << "\n\n";
     
     return 0;
 }
