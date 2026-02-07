@@ -112,12 +112,7 @@ void DemoInicial(){
         std::cout << "El numero aleatorio generado es "<< aleatorio  << "\n\n";
 
 // 7. Miranda Zarate Jorge Luis
-    std::cout << "Demo Miranda Zarate Jorge" << std::endl;
-    X1 j0 = 10;
-    std::cout << x << "! = " << factorial(j0) << "\n\n";
-
-    X2 j1 = 23;
-    std::cout << x << "! = " << factorial(j1) << "\n\n";
+    DemoInicialMirandaZarate();
 
 // 8. Riveros Guevara
 // IsPrime
@@ -218,6 +213,14 @@ void DemoInicialCuadrosVargas(){
 // 6. Mallaupoma Cesar
 
 // 7. Miranda Zarate Jorge Luis
+void DemoInicialMirandaZarate(){
+    std::cout << "Demo Miranda Zarate Jorge" << std::endl;
+    X1 j0 = 10;
+    std::cout << j0 << "! = " << factorial(j0) << "\n\n";
+
+    X2 j1 = 13;
+    std::cout << j1 << "! = " << factorial(j1) << "\n\n";
+}
 
 // 8. Riveros Guevara
 

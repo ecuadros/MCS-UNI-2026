@@ -127,6 +127,7 @@ void DemoInicialCuadrosVargas();
 // 6. Mallaupoma Cesar
 
 // 7. Miranda Zarate Jorge Luis
+void DemoInicialMirandaZarate();
 
 // 8. Riveros Guevara
 
