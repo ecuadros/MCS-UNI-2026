@@ -121,7 +121,7 @@ void DemoInicialCuadrosVargas();
 // 3. Diaz Tapia Adderly
 
 // 4. Lopez Flores Royer Amed
-
+void DemoInicialLopezFloresRoyerAmed();
 // 5. López Sandoval, Heiner
 
 // 6. Mallaupoma Cesar
