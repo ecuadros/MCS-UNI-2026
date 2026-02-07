@@ -2,17 +2,17 @@
 #include <cstdlib>
 #include "util.h"
 
-// g++ -std=c++17 main.cpp util.cpp -o main
+// para copmpilar usar:
+// make
 int main(){
     std::cout << "MCS-2026-PM\n";
-    int x = 20, y = 45, r, exponent;
-    float f1, f2, f3, base, result;
-    double d1, d2;
+    int x = 20, y = 45;
+    float f1, f2, f3;
 
 // 1. Bernaola Gayoso - César Raúl
     std::cout << "Demo Bernaola Gayoso Cesar" << std::endl;
-    T1 p1 = 10, p2 = 30;
-    T1 p3 = addition(p1, p2);
+    IntParam p1 = 10, p2 = 30;
+    IntParam p3 = addition(p1, p2);
     std::cout << "la suma de x=" << p1 << " y=" << p2 << " es: " << p3 << "\n\n";
 
     T2 q1 = 5.5, q2 = 10.2;

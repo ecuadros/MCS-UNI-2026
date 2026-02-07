@@ -3,8 +3,10 @@
 #include "util.h"
 
 // 1. Bernaola Gayoso - César Raúl
-IntParam addition(IntParam a, IntParam b) {
-    return a + b;
+// Implementacion especializada de adicion para IntParam
+template <>
+IntParam addition(IntParam a, IntParam b){
+    return a + b + 1;
 }
 
 // 2. Cuadros-Vargas Ernesto

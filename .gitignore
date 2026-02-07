@@ -2,3 +2,4 @@ main
 *.exe
 test.cpp
 a
+*.o

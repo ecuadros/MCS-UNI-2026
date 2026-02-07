@@ -1,3 +1,5 @@
+#ifndef __UTIL_H__
+#define __UTIL_H__
 #include "types.h"
 #include <cmath>
 
@@ -6,6 +8,9 @@ template <typename T>
 T addition(T a, T b) { 
     return a + b;
 }
+
+template <>
+IntParam addition(IntParam a, IntParam b);
 
 // 2. Cuadros-Vargas Ernesto
 template <typename T>
@@ -98,4 +103,6 @@ X power(X base, Y exponent){
         result *= base;
     return result;
 }
+
+#endif // __UTIL_H__
 
