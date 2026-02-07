@@ -138,6 +138,7 @@ void DemoInicialMirandaZarate();
 // 9. Segovia Giancarlo
 
 // 10. Suarez Maciel Susana Isabel.
+void DemoInicialSusana();
 
 // 11. Tellez Jhon
 
