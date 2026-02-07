@@ -87,23 +87,32 @@ int main(){
   
     std::cout << "Demo Jhon Tellez Heredia" << std::endl;
 
-
-    int suma = 0;
-    std::cout<<"Ingrese el numero 10";
+int SumaPrimero10(int x)
+{
+    
+       int suma = 0;
+       for (int i =0;i<=x;i++)
+       {
+           suma = suma + i;
+           
+       }
+       //std::cout<<"La suma es: "<<suma<< "\n\n";
+   
+return suma;
+    }
+    
     // TODO: no ingresar valores
-    std::cin>>x;
     // TODO: verificar la comparacion
     // TODO: cambiar a ++i
     // TODO: como solo es 1 instruccion, no necesitas {}
     // TODO: suma += i;
-    
-        for (int i =0;i>=x;i++)
-        {
-            suma = suma + i;
-            
-        }
-        std::cout<<"La suma es: "<<suma<< "\n\n";
+std::cout<<"Ingrese el numero 10: ";
+int x;
+std::cin>>x;
 
+int resultado = SumaPrimero10(x);
+std::cout<<"suma: "<<resultado<<std::endl;
+    }
 
 // 12. Valcarcel Julian
 // float round(float f, int n)
