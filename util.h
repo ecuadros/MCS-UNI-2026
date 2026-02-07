@@ -81,6 +81,19 @@ bool esPrimo(T &n) {
 
 // 9. Segovia Giancarlo
 // fibonacci
+/**
+ * @brief Calcula el n-ésimo número de la serie de Fibonacci.
+ *
+ * Función plantilla que calcula de forma recursiva el valor de
+ * la serie de Fibonacci para un número dado.
+ *
+ * @tparam T Tipo de dato numérico del parámetro.
+ * @param n Posición de la serie de Fibonacci que se desea calcular.
+ * @return Valor correspondiente al n-ésimo número de Fibonacci.
+ *
+ * @author Giancarlo Segovia - MCS UNI 2026
+ * @date 07/02/2026
+ */
 template <typename T>
 T fibonacci(T n){
     if(n <= 0) return 0;

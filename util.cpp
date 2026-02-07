@@ -213,6 +213,19 @@ void DemoInicialRiverosGuevara(){
 }
 
 // 9. Segovia Giancarlo
+/**
+ * @brief Función de demostración inicial de `fibonacci(int)`.
+ *
+ * Esta función muestra un mensaje de inicio en consola y calcula
+ * el valor de la serie de Fibonacci para un número fijo.
+ * El resultado se imprime en pantalla.
+ *
+ * La función utiliza la función `fibonacci(int)` para realizar
+ * el cálculo.
+ *
+ * @author Giancarlo Segovia - MCS UNI 2026
+ * @date 07/02/2026
+ */
 void DemoInicialSegoviaGiancarlo() {
     int x;
     std::cout << "Demo Giancarlo Segovia" << std::endl;
