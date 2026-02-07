@@ -60,7 +60,7 @@ int fibonacci(int n){
 // 14. Vinatea Chávez Camilo Jorge
 
 void DemoInicial(){
-    int x = 20, y = 45;
+    int x = 20; // , y = 45;
     float f1, f2, f3;
 
 // 1. Bernaola Gayoso - César Raúl
