@@ -148,6 +148,7 @@ void DemoInicialJhoinTellez();
 // 12. Valcarcel Julian
 
 // 13. Vilca Aguilar Luis
+void DemoInicialVilcaAguilar();
 
 // 14. Vinatea Chávez Camilo Jorge  
 void DemoInicialCamiloVinatea();

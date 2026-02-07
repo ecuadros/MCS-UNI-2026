@@ -130,12 +130,8 @@ void DemoInicial(){
 
 // 13. Vilca Aguilar Luis
 // root
-    {
-    std::cout << "Demo Vilca Aguilar Luis" << std::endl;
-    F1 L1 = 23.0;
-    raiz(L1);
-    std::cout << "La raiz (" << L1 << ") = " << raiz(L1) << "\n\n";
-    }
+    DemoInicialVilcaAguilar();
+    
 // 14. Vinatea Chávez Camilo Jorge
     DemoInicialCamiloVinatea();
     
@@ -227,8 +223,14 @@ void DemoInicialJhoinTellez();
 
 // 13. Vilca Aguilar Luis
 
-// 14. Vinatea Chávez Camilo Jorge 
+void DemoInicialVilcaAguilar(){
+    std::cout << "Demo Vilca Aguilar Luis" << std::endl;
+    F1 L1 = 23.0;
+    raiz(L1);
+    std::cout << "La raiz (" << L1 << ") = " << raiz(L1) << "\n\n";
+}
 
+// 14. Vinatea Chávez Camilo Jorge   
 void DemoInicialCamiloVinatea(){
     std::cout << "Demo Vinatea Camilo" << std::endl;
 
