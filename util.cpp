@@ -23,11 +23,7 @@ IntParam addition(IntParam a, IntParam b){
 //    return a * b;
 //}
 // 5. López Sandoval, Heiner
-float division(float &f1, float &f2)
-{
-    float f3 = f1 / f2 ;
-    return(f3) ;
-}
+
 // 6. Mallaupoma Cesar
 //
 
@@ -79,10 +75,11 @@ void DemoInicial(){
     DemoInicialLopezFloresRoyerAmed();
 // 5. López Sandoval, Heiner
 // division
-   std::cout << "Demo Lopez Sandoval Heiner" << std::endl;
-    f1 = 40; f2 = 50;
-    f3 = division(f1, f2);
-    std::cout << f1 << "/" << f2 << " = " << f3 << "\n" ;
+    std::cout << "Demo Lopez Sandoval Heiner" << std::endl;
+    T5 f11 = 20, f21 = 4 ;
+    std::cout << f11 << " / " << f21 << " = " << division(f11,f21) << "\n" ;
+    T5 f12 = 2, f22 = 3 ;
+    std::cout << f12 << " / " << f22 << " = " << division(f12,f22) << "\n" ;
 // 6. Mallaupoma Cesar
 // genera un numero aleatorio
     std::cout << "Demo Cesar Mallaupoma Orellana" << std::endl;
@@ -185,6 +182,13 @@ void DemoInicialLopezFloresRoyerAmed(){
     std::cout << "multiplicar(" << mpi1 << "," << mpi2 << ")=" << mpir << "\n\n";
 }
 // 5. López Sandoval, Heiner
+void DemoInicialLopezSandoval(){
+    std::cout << "Demo Lopez Sandoval Heiner" << std::endl;
+    T5 f11 = 20, f21 = 4 ;
+    std::cout << f11 << " / " << f21 << " = " << division(f11,f21) << "\n" ;
+    T5 f12 = 2, f22 = 3 ;
+    std::cout << f12 << " / " << f22 << " = " << division(f12,f22) << "\n" ;
+}
 
 // 6. Mallaupoma Cesar
 

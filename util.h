@@ -35,7 +35,10 @@ T multiplicar(T &a, T &b){
 }
 // 5. López Sandoval, Heiner
 // division
-float division(float &f1, float &f2);
+template <typename T5>
+T5 division(T5 &a, T5 &b){
+    return(a/b) ;
+}
 
 // 6. Mallaupoma Cesar
 // genera un numero aleatorio
@@ -129,7 +132,7 @@ Void DemoInicialDiazTapia();
 // 4. Lopez Flores Royer Amed
 void DemoInicialLopezFloresRoyerAmed();
 // 5. López Sandoval, Heiner
-
+void DemoInicialLopezSandoval();
 // 6. Mallaupoma Cesar
 
 // 7. Miranda Zarate Jorge Luis
