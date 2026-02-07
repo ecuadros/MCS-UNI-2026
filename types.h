@@ -29,7 +29,7 @@ using ParamDouble = double;
 
 // 11. Tellez Jhon
 
-using T11 0 int;
+using T11 = int;
 
 // 12. Valcarcel Julian
 
