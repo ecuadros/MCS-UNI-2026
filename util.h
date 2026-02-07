@@ -133,7 +133,7 @@ void DemoInicialLopezFloresRoyerAmed();
 // 5. López Sandoval, Heiner
 void DemoInicialLopezSandoval();
 // 6. Mallaupoma Cesar
-
+void DemoInicialCesarMallaupoma();
 // 7. Miranda Zarate Jorge Luis
 void DemoInicialMirandaZarate();
 
