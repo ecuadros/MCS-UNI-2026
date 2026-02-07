@@ -87,9 +87,10 @@ T average(const T& a, const T& b){
 
 // 11. Tellez Jhon
 // sumar 10 numeros naturales
-T11 SumaPrimero10(T11 x){
-    T11 suma = 0;
-    for(T11 i = 1; i <= x; ++i)
+template <typename T>
+T SumaPrimero10(T x){
+    T suma = 0;
+    for(T i = 1; i <= x; ++i)
         suma += i;
     return suma;
 }
