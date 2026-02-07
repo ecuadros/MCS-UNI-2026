@@ -1,7 +1,8 @@
+#include <iostream>
 #include <cmath>
 #include <cstdlib>
 #include "util.h"
-#include "util.h"
+
 
 // 1. Bernaola Gayoso - César Raúl
 // Implementacion especializada de adicion para IntParam
@@ -57,13 +58,6 @@ int fibonacci(int n){
 // 13. Vilca Aguilar Luis
 
 // 14. Vinatea Chávez Camilo Jorge
-/*T14 power(T14 base, T1 exponent){
-    T14 result = 1.0;
-    for(T1 i = 0; i < exponent; ++i)
-        result *= base;
-    return result;
-    
-}*/
 
 void DemoInicial(){
     int x = 20, y = 45;
@@ -156,8 +150,7 @@ void DemoInicial(){
     // TODO: como solo es 1 instruccion, no necesitas {}
     // TODO: suma += i;
     std::cout<<"Ingrese el numero 10: ";
-    int x;
-    std::cin>>x;
+    int x = 10;
 
     int resultado = SumaPrimero10(x);
     std::cout<<"suma: "<<resultado<<std::endl;
@@ -174,19 +167,8 @@ void DemoInicial(){
     std::cout << "La raiz (" << L1 << ") = " << raiz(L1) << "\n\n";
     }
 // 14. Vinatea Chávez Camilo Jorge
-    {
-    std::cout << "Demo Vinatea Camilo" << std::endl;
-
-    T2 base = 3.1415; 
-    T1 exponent = 3;
-    T2 result = power(base, exponent);
-    std::cout << base << " ^ " << exponent << " = " << result << "\n\n";
+    DemoInicialCamiloVinatea();
     
-    T1 base2 = 6; 
-    T1 exponent2 = 4;
-    T1 result2 = power(base2, exponent2);
-    std::cout << base2 << " ^ " << exponent2 << " = " << result2 << "\n\n";
-    }
 }
 
 // 1. Bernaola Gayoso - César Raúl
@@ -230,4 +212,18 @@ void DemoInicialCuadrosVargas(){
 
 // 13. Vilca Aguilar Luis
 
-// 14. Vinatea Chávez Camilo Jorge  
+// 14. Vinatea Chávez Camilo Jorge 
+
+void demoinicialCamiloVinatea(){
+    std::cout << "Demo Vinatea Camilo" << std::endl;
+
+    T2 base = 3.1415; 
+    IntParam exponent = 3;
+    T2 result = power(base, exponent);
+    std::cout << base << " ^ " << exponent << " = " << result << "\n\n";
+    
+    IntParam base2 = 6; 
+    IntParam exponent2 = 4;
+    IntParam result2 = power(base2, exponent2);
+    std::cout << base2 << " ^ " << exponent2 << " = " << result2 << "\n\n";
+}
