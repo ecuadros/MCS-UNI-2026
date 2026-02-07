@@ -1,7 +1,8 @@
 #ifndef __UTIL_H__
 #define __UTIL_H__
-#include "types.h"
 #include <cmath>
+#include "types.h"
+
 
 // 1. Bernaola Gayoso - César Raúl
 template <typename T>
@@ -118,6 +119,7 @@ X power(X base, Y exponent){
 void DemoInicial();
 
 // 1. Bernaola Gayoso - César Raúl
+void DemoInicialBernaolaGayosoCesar();
 
 // 2. Cuadros-Vargas Ernesto
 void DemoInicialCuadrosVargas();
@@ -125,18 +127,20 @@ void DemoInicialCuadrosVargas();
 // 3. Diaz Tapia Adderly
 
 // 4. Lopez Flores Royer Amed
-
+void DemoInicialLopezFloresRoyerAmed();
 // 5. López Sandoval, Heiner
 
 // 6. Mallaupoma Cesar
 
 // 7. Miranda Zarate Jorge Luis
+void DemoInicialMirandaZarate();
 
 // 8. Riveros Guevara
-
+void DemoInicialRiverosGuevara();
 // 9. Segovia Giancarlo
 
 // 10. Suarez Maciel Susana Isabel.
+void DemoInicialSusana();
 
 // 11. Tellez Jhon
 
@@ -146,7 +150,7 @@ void DemoInicialCuadrosVargas();
 void DemoInicialVilcaAguilar();
 
 // 14. Vinatea Chávez Camilo Jorge  
-
+void DemoInicialCamiloVinatea();
 
 
 #endif // __UTIL_H__
