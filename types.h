@@ -25,6 +25,7 @@ using TH=int;
 // 9. Segovia Giancarlo
 
 // 10. Suarez Maciel Susana Isabel.
+using ParamDouble = double;
 
 // 11. Tellez Jhon
 

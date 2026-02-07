@@ -91,9 +91,10 @@ int main(){
 // average()
     {
     std::cout << "Demo Susana Suarez Maciel" << std::endl;
-    float prom = average(x,y);
-    std::cout << "Promedio(x,y)=" << prom << "\n\n";
+    ParamDouble sx = 20, sy = 45;
+    std::cout << "Promedio(x,y)=" << average(sx,sy) << "\n\n";
     }
+
 // 11. Tellez Jhon
 // sumar 10 numeros naturales
 

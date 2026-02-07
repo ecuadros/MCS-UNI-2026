@@ -2,3 +2,6 @@ main
 *.exe
 test.cpp
 a
+*.o
+*.obj
+*.so

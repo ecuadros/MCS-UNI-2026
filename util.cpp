@@ -43,10 +43,7 @@ int fibonacci(int n){
 */
 
 // 10. Suarez Maciel Susana Isabel
-float average(int x, int y){
-    return (x + y)/2.0f;
-
-}
+//Implementado en .h
 
 // 11. Tellez Jhon
 
