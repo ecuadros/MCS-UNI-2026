@@ -85,14 +85,23 @@ void reversebits(UI &x) {
 // 12. Valcarcel Julian
 
 // 13. Vilca Aguilar Luis
-
 //Enciende todos los bits desde el bit 0 hasta el bit n
 void setLowerBits(UI &x, int n){
     UI mask = (1 << (n + 1)) - 1;  // Crear máscara
     x |= mask;                    // Encender bits
 }
 
-// 14. Vinatea Chávez Camilo Jorge  
+// 14. Vinatea Chávez Camilo Jorge
+void movebit(UI &x, int n, int m){
+    // Extraer el bit n, verifica si el n-esimo bit de x está encendido
+    UI bit = (x >> n) & 1;
+    // Apagar el bit n en x, mostrar si el n-esimo bit de x está encendido o apagado
+    x &= ~(1 << n);
+    // Colocar el bit extraído en la posición m
+    if(bit){
+        x |= (1 << m);
+    }
+}
 
 
 
@@ -188,6 +197,19 @@ void DemoBits(){
     cout << "X en decimal: " << dec << x << endl;
     cout << "X en binario: " << bitset<8>(x) << endl;
 
-    // 14. Vinatea Chávez Camilo Jorge
+    // 14. Vinatea Chávez Camilo Jorge  
+    x = 0b10010;
+    cout << endl << "Demo Camilo Vinatea - Intercambiar el bit m por el bit n" << endl << endl;
+    cout << "X (en decimal) antes de cambiar el bit 4 por el bit 0: " << x << endl;
+    cout << "X (en binario) antes de cambiar el bit 4 por el bit 0: " << bitset<5>(x) << endl;
+    movebit(x, 4, 0);
+    cout << "X (en decimal) despues de cambiar el bit 4 por el bit 0: " << x << endl;
+    cout << "X (en binario) despues de cambiar el bit 4 por el bit 0: " << bitset<5>(x) << endl;
 
+    x = 0b10100;
+    cout << endl << "X (en decimal) antes de cambiar el bit 3 por el bit 0: " << x << endl;
+    cout << "X (en binario) antes de cambiar el bit 3 por el bit 0: " << bitset<5>(x) << endl;
+    movebit(x, 3, 0);
+    cout << "X (en decimal) despues de cambiar el bit 3 por el bit 0: " << x << endl;
+    cout << "X (en binario) despues de cambiar el bit 3 por el bit 0: " << bitset<5>(x) << endl;
 }

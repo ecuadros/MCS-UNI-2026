@@ -46,9 +46,13 @@ void reversebits(UI &x);
 // 12. Valcarcel Julian
 
 // 13. Vilca Aguilar Luis
-
-    //Enciende todos los bits desde el bit 0 hasta el bit n
+ //Enciende todos los bits desde el bit 0 hasta el bit n
     void setLowerBits(UI &x, int n);
+
+// 14. Vinatea Chávez Camilo Jorge 
+    // Intercambiar el n-esimo bit de x, con el m-esimo bit de x
+    void movebit(UI &x, int n, int m);
+   
 
 // 14. Vinatea Chávez Camilo Jorge  
 
