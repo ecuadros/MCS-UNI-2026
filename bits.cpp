@@ -203,7 +203,8 @@ void DemoBits(){
     cout << "invertirPosicionPar Resultado: " << b << endl;
 
     // 2. Cuadros-Vargas Ernesto
-
+    cout << "Demo Cuadros-Vargas Ernesto" << endl;
+    
     // 3. Diaz Tapia Adderly
     setBitToValue(x, 3, 1);
     cout << "X después de encender el bit 3: "<< x <<endl;
