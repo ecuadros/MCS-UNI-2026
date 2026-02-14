@@ -5,6 +5,10 @@
 using namespace std;
 
 // 1. Bernaola Gayoso - César Raúl
+void invertirPosicionPar(std::bitset<8>& b){
+    for(size_t i = 0; i < b.size(); i += 2) 
+        b.flip(i);
+}
 
 // 2. Cuadros-Vargas Ernesto
 // Enciende el n-esimo bit de x
@@ -36,7 +40,35 @@ void setBitToValue(UI &x, int n, bool v) {
     x = (x & ~(1 << n)) | (v << n);
 }
 // 4. Lopez Flores Royer Amed
+/**
+ * @brief Genera una máscara con los n bits menos significativos encendidos.
+ * 
+ * @param n Número de bits a encender.
+ * @return UI Máscara de bits resultante.
+ */
+UI lowBitMask(int n){
+    return (1u<<n)-1;
+}
 
+/**
+ * @brief Realiza un cruce genético entre dos valores (hijos).
+ * 
+ * Combina los bits superiores de child1 con los bits inferiores de child2,
+ * utilizando k como el punto de corte.
+ * 
+ * @param child1 Primer valor (aporta los bits superiores).
+ * @param child2 Segundo valor (aporta los bits inferiores).
+ * @param k Punto de cruce (bit index).
+ * @return UI El resultado del cruce.
+ * Devuelve solo el primer hijo de los dos padres
+ */
+UI crossoverGenetic(UI &child1, UI &child2,int k){
+    UI maskLow = lowBitMask(k);
+    UI maskHigh = ~maskLow;
+    
+    return (child1 & maskHigh) | (child2 & maskLow);
+    
+}
 // 5. López Sandoval, Heiner
 // Invertit los bits de x, indicando con cuantos bits se trabaja
 UI invertirBits(UI &x, UI CantidadBits) {
@@ -58,6 +90,17 @@ UI invertirBits(UI &x, UI CantidadBits) {
 }
 
 // 7. Miranda Zarate Jorge Luis
+void reverse(UI &x){
+    UI rev = 0;
+    while(x > 0){
+        rev <<= 1;
+        if(x & 1){
+            rev |= 1;
+        }
+        x >>= 1;
+    }
+    x = rev;
+}
 
 // 8. Riveros Guevara
 
@@ -85,12 +128,33 @@ void reversebits(UI &x) {
     }
 
 // 11. Tellez Jhon
-
+// Enciende 2 bit del centro de 5 bits (bit 2)
+void turnon(UI &x, UI &y, int n,int m){
+    n=2; // El bit del centro de 5 bits es el bit 2 (0, 1, 2, 3, 4)
+    n=3; // El bit del centro de 5 bits es el bit 2 (0, 1, 2, 3, 4)
+    x |= (1 << n); // Enciende el bit n
+    y |= (1 << m); // Enciende el bit m
+}
 // 12. Valcarcel Julian
 
 // 13. Vilca Aguilar Luis
+//Enciende todos los bits desde el bit 0 hasta el bit n
+void setLowerBits(UI &x, int n){
+    UI mask = (1 << (n + 1)) - 1;  // Crear máscara
+    x |= mask;                    // Encender bits
+}
 
 // 14. Vinatea Chávez Camilo Jorge
+void movebit(UI &x, int n, int m){
+    // Extraer el bit n, verifica si el n-esimo bit de x está encendido
+    UI bit = (x >> n) & 1;
+    // Apagar el bit n en x, mostrar si el n-esimo bit de x está encendido o apagado
+    x &= ~(1 << n);
+    // Colocar el bit extraído en la posición m
+    if(bit){
+        x |= (1 << m);
+    }
+}
 
 
 
@@ -131,12 +195,16 @@ void DemoBits(){
 
     x = x + 5; // x += 5;
     x <<= 2; // x = x << 2;
-    cout << "X después de sumar 5 y desplazar a la izquierda 2" << x << endl;
+    cout << "X después de sumar 5 y desplazar a la izquierda: 2" << x << endl;
     x |= 0b00001111; // x = x | 0b00001111;
     cout << "X después de hacer OR con 0b00001111: " << x << endl";
     x ^= 0b11110000; // x = x ^ 0b11110000;
 
     // 1. Bernaola Gayoso - César Raúl
+    bitset<8> b(36);
+    cout << "Original : " << b << endl;
+    invertirPosicionPar(b);
+    cout << "invertirPosicionPar Resultado: " << b << endl;
 
     // 2. Cuadros-Vargas Ernesto
 
@@ -145,7 +213,16 @@ void DemoBits(){
     cout << "X después de encender el bit 3: "<< x <<endl;
     cout << "X en binario: " << bitset<8>(x) << endl;
     // 4. Lopez Flores Royer Amed
-
+    cout<<"Demo Crossover Royer Amed Lopez Flores"<<endl;
+    //cout<<bitset<8>((1u<<4)-1u)<<endl;
+    
+    cout<<"Demo low Bit mask" <<bitset<8>(lowBitMask(4))<<endl;
+    UI child1 = 0b10101111, child2 = 0b01110011;
+    int kcross = 4;
+    cout<<"Child 1  :"<< bitset<8>(child1)<<endl;
+    cout<<"Child 2  :"<< bitset<8>(child2)<<endl;
+    cout<<"k cross  :"<<kcross<<endl;
+    cout<<"Crossover:" << bitset<8>(crossoverGenetic(child1,child2,kcross))<<endl;
     // 5. López Sandoval, Heiner
     x = 13 ;
     cout << "Antes de invertir los bits:" << bitset<8>(x) << endl ;
@@ -161,6 +238,9 @@ void DemoBits(){
     cout << test2 << " es potencia de 2? "<< (isPowerOfTwo(test2) ? "Si" : "No") << endl;
 
     // 7. Miranda Zarate Jorge Luis
+    x = 0b1111000011100000;
+    reverse(x);
+    cout <<  "X después de invertir sus bits 0b1111000011100000: " << bitset<16>(x) << endl;
 
     // 8. Riveros Guevara
 
@@ -181,7 +261,30 @@ void DemoBits(){
     // 12. Valcarcel Julian
 
     // 13. Vilca Aguilar Luis
+    
+    cout << endl;
+    cout << "Demostracion de encendido de bits desde el bit 0 hasta el bit n:" << endl;
+    x = 32;
 
-    // 14. Vinatea Chávez Camilo Jorge
+    cout << "X antes de encender los bits desde el 0 hasta el 3: " << bitset<8>(x) << endl;
+    setLowerBits(x, 3); // Enciende todos los bits desde el bit 0 hasta el bit 3 de x
+    cout << "X después de encender los bits desde el 0 hasta el 3: " << bitset<8>(x) << endl;
+    cout << "X en decimal: " << dec << x << endl;
+    cout << "X en binario: " << bitset<8>(x) << endl;
 
+    // 14. Vinatea Chávez Camilo Jorge  
+    x = 0b10010;
+    cout << endl << "Demo Camilo Vinatea - Intercambiar el bit m por el bit n" << endl << endl;
+    cout << "X (en decimal) antes de cambiar el bit 4 por el bit 0: " << x << endl;
+    cout << "X (en binario) antes de cambiar el bit 4 por el bit 0: " << bitset<5>(x) << endl;
+    movebit(x, 4, 0);
+    cout << "X (en decimal) despues de cambiar el bit 4 por el bit 0: " << x << endl;
+    cout << "X (en binario) despues de cambiar el bit 4 por el bit 0: " << bitset<5>(x) << endl;
+
+    x = 0b10100;
+    cout << endl << "X (en decimal) antes de cambiar el bit 3 por el bit 0: " << x << endl;
+    cout << "X (en binario) antes de cambiar el bit 3 por el bit 0: " << bitset<5>(x) << endl;
+    movebit(x, 3, 0);
+    cout << "X (en decimal) despues de cambiar el bit 3 por el bit 0: " << x << endl;
+    cout << "X (en binario) despues de cambiar el bit 3 por el bit 0: " << bitset<5>(x) << endl;
 }
