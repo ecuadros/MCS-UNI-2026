@@ -18,7 +18,8 @@ void DemoBits();
     void swapbits(UI &x, UI &y, int n);
 
 // 3. Diaz Tapia Adderly
-
+    //Permite encender o apagar un bit en la posición "n", para encender un bit v=1 para apagar v=0
+    void setBitToValue(UI &x, int n, bool v);
 // 4. Lopez Flores Royer Amed
 
 // 5. López Sandoval, Heiner
