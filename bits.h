@@ -34,7 +34,8 @@ void DemoBits();
 // 10. Suarez Maciel Susana Isabel.
 
 // 11. Tellez Jhon
-
+    // Enciende  2 bit del centro de 5 bit
+    void turnon(UI &x, UI &y, int n, int m);
 // 12. Valcarcel Julian
 
 // 13. Vilca Aguilar Luis

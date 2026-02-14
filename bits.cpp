@@ -48,7 +48,13 @@ void swapbits(UI &x, UI &y, int n){
 // 10. Suarez Maciel Susana Isabel.
 
 // 11. Tellez Jhon
-
+// Enciende 2 bit del centro de 5 bits (bit 2)
+void turnon(UI &x, UI &y, int n,int m){
+    n=2; // El bit del centro de 5 bits es el bit 2 (0, 1, 2, 3, 4)
+    n=3; // El bit del centro de 5 bits es el bit 2 (0, 1, 2, 3, 4)
+    x |= (1 << n); // Enciende el bit n
+    y |= (1 << m); // Enciende el bit m
+}
 // 12. Valcarcel Julian
 
 // 13. Vilca Aguilar Luis
