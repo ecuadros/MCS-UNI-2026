@@ -23,7 +23,8 @@ void invertirPosPar(std::bitset<8>& b);
     //Permite encender o apagar un bit en la posición "n", para encender un bit v=1 para apagar v=0
     void setBitToValue(UI &x, int n, bool v);
 // 4. Lopez Flores Royer Amed
-
+UI lowBitMask(int n);
+UI crossoverGenetic(UI &child1, UI &child2,int k);
 // 5. López Sandoval, Heiner
 
     // Invertir los bits de un numero
