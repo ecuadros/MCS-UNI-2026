@@ -34,7 +34,35 @@ void swapbits(UI &x, UI &y, int n){
 // 3. Diaz Tapia Adderly
 
 // 4. Lopez Flores Royer Amed
+/**
+ * @brief Genera una máscara con los n bits menos significativos encendidos.
+ * 
+ * @param n Número de bits a encender.
+ * @return UI Máscara de bits resultante.
+ */
+UI lowBitMask(int n){
+    return (1u<<n)-1;
+}
 
+/**
+ * @brief Realiza un cruce genético entre dos valores (hijos).
+ * 
+ * Combina los bits superiores de child1 con los bits inferiores de child2,
+ * utilizando k como el punto de corte.
+ * 
+ * @param child1 Primer valor (aporta los bits superiores).
+ * @param child2 Segundo valor (aporta los bits inferiores).
+ * @param k Punto de cruce (bit index).
+ * @return UI El resultado del cruce.
+ * Devuelve solo el primer hijo de los dos padres
+ */
+UI crossoverGenetic(UI &child1, UI &child2,int k){
+    UI maskLow = lowBitMask(k);
+    UI maskHigh = ~maskLow;
+    
+    return (child1 & maskHigh) | (child2 & maskLow);
+    
+}
 // 5. López Sandoval, Heiner
 
 // 6. Mallaupoma Cesar
@@ -106,7 +134,16 @@ void DemoBits(){
     // 3. Diaz Tapia Adderly
 
     // 4. Lopez Flores Royer Amed
-
+    cout<<"Demo Crossover Royer Amed Lopez Flores"<<endl;
+    //cout<<bitset<8>((1u<<4)-1u)<<endl;
+    
+    cout<<"Demo low Bit mask" <<bitset<8>(lowBitMask(4))<<endl;
+    UI child1 = 0b10101111, child2 = 0b01110011;
+    int kcross = 4;
+    cout<<"Child 1  :"<< bitset<8>(child1)<<endl;
+    cout<<"Child 2  :"<< bitset<8>(child2)<<endl;
+    cout<<"k cross  :"<<kcross<<endl;
+    cout<<"Crossover:" << bitset<8>(crossoverGenetic(child1,child2,kcross))<<endl;
     // 5. López Sandoval, Heiner
 
     // 6. Mallaupoma Cesar

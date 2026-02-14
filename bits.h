@@ -20,7 +20,8 @@ void DemoBits();
 // 3. Diaz Tapia Adderly
 
 // 4. Lopez Flores Royer Amed
-
+UI lowBitMask(int n);
+UI crossoverGenetic(UI &child1, UI &child2,int k);
 // 5. López Sandoval, Heiner
 
 // 6. Mallaupoma Cesar
