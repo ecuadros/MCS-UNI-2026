@@ -39,6 +39,8 @@ void DemoBits();
 
 // 13. Vilca Aguilar Luis
 
-// 14. Vinatea Chávez Camilo Jorge  
+// 14. Vinatea Chávez Camilo Jorge 
+    // Intercambiar el n-esimo bit de x, con el m-esimo bit de x
+    void movebit(UI &x, int n, int m);
 
 #endif // __BITS_H__
