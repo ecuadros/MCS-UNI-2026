@@ -36,6 +36,18 @@ void swapbits(UI &x, UI &y, int n){
 // 4. Lopez Flores Royer Amed
 
 // 5. López Sandoval, Heiner
+// Invertit los bits de x, indicando con cuantos bits se trabaja
+UI invertirBits(UI &x, UI CantidadBits) {
+    UI resultado = 0;
+    for (UI i = 0; i < CantidadBits; i++) {
+        // Extraer el bit i de num
+        UI bit = (x >> i) & 1;
+        // Colocar ese bit en la posición invertida
+        resultado |= (bit << (CantidadBits - 1 - i));
+    }
+    return resultado;
+}
+
 
 // 6. Mallaupoma Cesar
 
@@ -103,7 +115,7 @@ void DemoBits(){
 
     x = x + 5; // x += 5;
     x <<= 2; // x = x << 2;
-    cout << "X después de sumar 5 y desplazar a la izquierda 2:
+    cout << "X después de sumar 5 y desplazar a la izquierda 2:" ;
     x |= 0b00001111; // x = x | 0b00001111;
     cout << "X después de hacer OR con 0b00001111: " << x << endl";
     x ^= 0b11110000; // x = x ^ 0b11110000;
@@ -117,6 +129,10 @@ void DemoBits(){
     // 4. Lopez Flores Royer Amed
 
     // 5. López Sandoval, Heiner
+    x = 13 ;
+    cout << "Antes de invertir los bits:" << bitset<8>(x) << endl ;
+    x = invertirBits(x,8) ;
+    cout << "Despues de invertir los bits:" << bitset<8>(x) << endl ;
 
     // 6. Mallaupoma Cesar
 

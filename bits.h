@@ -23,6 +23,10 @@ void DemoBits();
 
 // 5. López Sandoval, Heiner
 
+    // Invertir los bits de un numero
+    UI invertirBits(UI &x, UI CantidadBits) ;
+
+
 // 6. Mallaupoma Cesar
 
 // 7. Miranda Zarate Jorge Luis
