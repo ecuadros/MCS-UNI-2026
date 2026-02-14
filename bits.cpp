@@ -40,6 +40,18 @@ void swapbits(UI &x, UI &y, int n){
 // 4. Lopez Flores Royer Amed
 
 // 5. López Sandoval, Heiner
+// Invertit los bits de x, indicando con cuantos bits se trabaja
+UI invertirBits(UI &x, UI CantidadBits) {
+    UI resultado = 0;
+    for (UI i = 0; i < CantidadBits; i++) {
+        // Extraer el bit i de num
+        UI bit = (x >> i) & 1;
+        // Colocar ese bit en la posición invertida
+        resultado |= (bit << (CantidadBits - 1 - i));
+    }
+    return resultado;
+}
+
 
 // 6. Mallaupoma Cesar
 
@@ -50,6 +62,15 @@ void swapbits(UI &x, UI &y, int n){
 // 9. Segovia Giancarlo
 
 // 10. Suarez Maciel Susana Isabel.
+    // Cuenta la cantidad de bits en 1 (popcount) usando Brian Kernighan
+    int countOnes(UI x){
+        int count = 0;
+        while (x != 0){
+            x &= (x - 1); // elimina el bit 1 menos significativo
+            count++;
+        }
+        return count;
+    }
 
 // 11. Tellez Jhon
 
@@ -98,9 +119,9 @@ void DemoBits(){
 
     x = x + 5; // x += 5;
     x <<= 2; // x = x << 2;
-    cout << "X después de sumar 5 y desplazar a la izquierda 2: "<< x << endl;
+    cout << "X después de sumar 5 y desplazar a la izquierda 2:" ;
     x |= 0b00001111; // x = x | 0b00001111;
-    cout << "X después de hacer OR con 0b00001111: " << x << endl;
+    cout << "X después de hacer OR con 0b00001111: " << x << endl";
     x ^= 0b11110000; // x = x ^ 0b11110000;
 
     // 1. Bernaola Gayoso - César Raúl
@@ -116,6 +137,10 @@ void DemoBits(){
     // 4. Lopez Flores Royer Amed
 
     // 5. López Sandoval, Heiner
+    x = 13 ;
+    cout << "Antes de invertir los bits:" << bitset<8>(x) << endl ;
+    x = invertirBits(x,8) ;
+    cout << "Despues de invertir los bits:" << bitset<8>(x) << endl ;
 
     // 6. Mallaupoma Cesar
 
@@ -125,7 +150,11 @@ void DemoBits(){
 
     // 9. Segovia Giancarlo
 
-    // 10. Suarez Maciel Susana Isabel.
+    // 10. Suarez Maciel Susana Isabel
+    
+    UI a = 0b10110100;
+    cout << "a en binario: " << bitset<8>(a) << endl;
+    cout << "Cantidad de bits en 1: " << countOnes(a) << "\n\n";
 
     // 11. Tellez Jhon
 
