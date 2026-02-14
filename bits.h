@@ -42,7 +42,8 @@ void reversebits(UI &x);
     int countOnes(UI x);
 
 // 11. Tellez Jhon
-
+    // Enciende  2 bit del centro de 5 bit
+    void turnon(UI &x, UI &y, int n, int m);
 // 12. Valcarcel Julian
 
 // 13. Vilca Aguilar Luis
