@@ -1,10 +1,12 @@
 #ifndef __BITS_H__
 #define __BITS_H__
+#include <bitset>
 #include "types.h"
 
 void DemoBits();
 
 // 1. Bernaola Gayoso - César Raúl
+void invertirPosPar(std::bitset<8>& b);
 
 // 2. Cuadros-Vargas Ernesto
 
