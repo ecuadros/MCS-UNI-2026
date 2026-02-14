@@ -94,7 +94,7 @@ void DemoBits(){
 
     x = x + 5; // x += 5;
     x <<= 2; // x = x << 2;
-    cout << "X después de sumar 5 y desplazar a la izquierda 2:
+    cout << "X después de sumar 5 y desplazar a la izquierda 2: "; << x << endl;
     x |= 0b00001111; // x = x | 0b00001111;
     cout << "X después de hacer OR con 0b00001111: " << x << endl;
     x ^= 0b11110000; // x = x ^ 0b11110000;
