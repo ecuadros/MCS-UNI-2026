@@ -29,7 +29,7 @@ void DemoBits();
 
 
 // 6. Mallaupoma Cesar
-
+    bool isPowerOfTwo(UI x);
 // 7. Miranda Zarate Jorge Luis
 
 // 8. Riveros Guevara

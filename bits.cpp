@@ -52,6 +52,10 @@ UI invertirBits(UI &x, UI CantidadBits) {
 
 
 // 6. Mallaupoma Cesar
+    bool isPowerOfTwo(UI x){
+    if(x == 0) return false;  // 0 no es potencia de 2
+    return (x & (x - 1)) == 0;
+}
 
 // 7. Miranda Zarate Jorge Luis
 
@@ -149,6 +153,12 @@ void DemoBits(){
     cout << "Despues de invertir los bits:" << bitset<8>(x) << endl ;
 
     // 6. Mallaupoma Cesar
+    UI test1 = 16;
+    UI test2 = 18;
+
+    cout << test1 << " es potencia de 2? "<< (isPowerOfTwo(test1) ? "Si" : "No") << endl;
+
+    cout << test2 << " es potencia de 2? "<< (isPowerOfTwo(test2) ? "Si" : "No") << endl;
 
     // 7. Miranda Zarate Jorge Luis
 
