@@ -56,6 +56,16 @@ UI invertirBits(UI &x, UI CantidadBits) {
 // 8. Riveros Guevara
 
 // 9. Segovia Giancarlo
+// Revertir todos los bits de x
+void reversebits(UI &x) {
+    UI res = 0;
+    for(int i = 0; i < 32; i++) {
+        res <<= 1;
+        res |= (x & 1);
+        x >>= 1;
+    }
+    x = res;
+}
 
 // 10. Suarez Maciel Susana Isabel.
     // Cuenta la cantidad de bits en 1 (popcount) usando Brian Kernighan
@@ -74,13 +84,13 @@ UI invertirBits(UI &x, UI CantidadBits) {
 
 // 13. Vilca Aguilar Luis
 
-// 14. Vinatea Chávez Camilo Jorge  
+// 14. Vinatea Chávez Camilo Jorge
 
 
 
 void DemoBits(){
     UI x = 5, y = 11, z;
-    
+
     cout << "X en binario: " << bitset<4>(x) << endl;
     cout << "Y en binario: " << bitset<4>(y) << endl;
 
@@ -115,7 +125,7 @@ void DemoBits(){
 
     x = x + 5; // x += 5;
     x <<= 2; // x = x << 2;
-    cout << "X después de sumar 5 y desplazar a la izquierda 2:" ;
+    cout << "X después de sumar 5 y desplazar a la izquierda 2" << x << endl;
     x |= 0b00001111; // x = x | 0b00001111;
     cout << "X después de hacer OR con 0b00001111: " << x << endl";
     x ^= 0b11110000; // x = x ^ 0b11110000;
@@ -141,6 +151,10 @@ void DemoBits(){
     // 8. Riveros Guevara
 
     // 9. Segovia Giancarlo
+    x = 0b11001000;
+    cout << "X antes de hacer reverse: " << bitset<32>(x) << endl;
+    reversebits(x);
+    cout << "X después de hacer reverse: " << bitset<32>(x) << endl;
 
     // 10. Suarez Maciel Susana Isabel
     
@@ -154,6 +168,6 @@ void DemoBits(){
 
     // 13. Vilca Aguilar Luis
 
-    // 14. Vinatea Chávez Camilo Jorge  
+    // 14. Vinatea Chávez Camilo Jorge
 
 }

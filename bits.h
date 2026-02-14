@@ -34,6 +34,7 @@ void DemoBits();
 // 8. Riveros Guevara
 
 // 9. Segovia Giancarlo
+void reversebits(UI &x);
 
 // 10. Suarez Maciel Susana Isabel.
     // Cuenta la cantidad de bits en 1 en x (popcount)
@@ -45,6 +46,6 @@ void DemoBits();
 
 // 13. Vilca Aguilar Luis
 
-// 14. Vinatea Chávez Camilo Jorge  
+// 14. Vinatea Chávez Camilo Jorge
 
 #endif // __BITS_H__
