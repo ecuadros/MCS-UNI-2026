@@ -6,6 +6,8 @@ using IntParam = int;
 using T1 = long long;
 using T2 = float;
 using UI = unsigned int;
+using Imag = double;
+using Real = double;
 
 // #else
 // using T1 = char;
