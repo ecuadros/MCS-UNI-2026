@@ -32,7 +32,9 @@ void swapbits(UI &x, UI &y, int n){
 }
 
 // 3. Diaz Tapia Adderly
-
+void setBitToValue(UI &x, int n, bool v) {
+    x = (x & ~(1 << n)) | (v << n);
+}
 // 4. Lopez Flores Royer Amed
 
 // 5. López Sandoval, Heiner
@@ -94,8 +96,8 @@ void DemoBits(){
 
     x = x + 5; // x += 5;
     x <<= 2; // x = x << 2;
-    cout << "X después de sumar 5 y desplazar a la izquierda 2:
-    x |= 0b00001111; // x = x | 0b00001111;
+    cout << "X después de sumar 5 y desplazar a la izquierda 2:"
+    x |= 0b00001111; // x = x | 0b00001111";
     cout << "X después de hacer OR con 0b00001111: " << x << endl;
     x ^= 0b11110000; // x = x ^ 0b11110000;
 
@@ -104,7 +106,9 @@ void DemoBits(){
     // 2. Cuadros-Vargas Ernesto
 
     // 3. Diaz Tapia Adderly
-
+    void setBitToValue(x, 3, 1)
+    cout << "X después de encender el bit 3: "<< x <<endl;
+    cout << "X en binario: " << bitset<8>(x) << endl;
     // 4. Lopez Flores Royer Amed
 
     // 5. López Sandoval, Heiner
