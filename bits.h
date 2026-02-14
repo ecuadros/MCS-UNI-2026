@@ -26,6 +26,7 @@ void DemoBits();
 // 6. Mallaupoma Cesar
 
 // 7. Miranda Zarate Jorge Luis
+void reverse(UI &x);
 
 // 8. Riveros Guevara
 

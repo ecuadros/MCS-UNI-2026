@@ -40,6 +40,17 @@ void swapbits(UI &x, UI &y, int n){
 // 6. Mallaupoma Cesar
 
 // 7. Miranda Zarate Jorge Luis
+void reverse(UI &x){
+    UI rev = 0;
+    while(x > 0){
+        rev <<= 1;
+        if(x & 1){
+            rev |= 1;
+        }
+        x >>= 1;
+    }
+    x = rev;
+}
 
 // 8. Riveros Guevara
 
@@ -112,6 +123,9 @@ void DemoBits(){
     // 6. Mallaupoma Cesar
 
     // 7. Miranda Zarate Jorge Luis
+    x = 0b1111000011100000;
+    reverse(x);
+    cout <<  "X después de invertir sus bits 0b1111000011100000: " << bitset<16>(x) << endl;
 
     // 8. Riveros Guevara
 
