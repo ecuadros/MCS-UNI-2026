@@ -32,6 +32,8 @@ void DemoBits();
 // 9. Segovia Giancarlo
 
 // 10. Suarez Maciel Susana Isabel.
+    // Cuenta la cantidad de bits en 1 en x (popcount)
+    int countOnes(UI x);
 
 // 11. Tellez Jhon
 
