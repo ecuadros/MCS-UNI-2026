@@ -39,6 +39,9 @@ void DemoBits();
 
 // 13. Vilca Aguilar Luis
 
+    //Enciende todos los bits desde el bit 0 hasta el bit n
+    void setLowerBits(UI &x, int n);
+
 // 14. Vinatea Chávez Camilo Jorge  
 
 #endif // __BITS_H__
