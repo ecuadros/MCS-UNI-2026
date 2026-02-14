@@ -32,7 +32,7 @@ UI crossoverGenetic(UI &child1, UI &child2,int k);
 
 
 // 6. Mallaupoma Cesar
-
+    bool isPowerOfTwo(UI x);
 // 7. Miranda Zarate Jorge Luis
 void reverse(UI &x);
 
