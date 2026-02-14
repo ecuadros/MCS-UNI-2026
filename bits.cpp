@@ -86,7 +86,13 @@ void reversebits(UI &x) {
 
 // 13. Vilca Aguilar Luis
 
-// 14. Vinatea Chávez Camilo Jorge
+//Enciende todos los bits desde el bit 0 hasta el bit n
+void setLowerBits(UI &x, int n){
+    UI mask = (1 << (n + 1)) - 1;  // Crear máscara
+    x |= mask;                    // Encender bits
+}
+
+// 14. Vinatea Chávez Camilo Jorge  
 
 
 
@@ -127,7 +133,7 @@ void DemoBits(){
 
     x = x + 5; // x += 5;
     x <<= 2; // x = x << 2;
-    cout << "X después de sumar 5 y desplazar a la izquierda 2" << x << endl;
+    cout << "X después de sumar 5 y desplazar a la izquierda 2: " << x << endl;
     x |= 0b00001111; // x = x | 0b00001111;
     cout << "X después de hacer OR con 0b00001111: " << x << endl";
     x ^= 0b11110000; // x = x ^ 0b11110000;
@@ -171,6 +177,16 @@ void DemoBits(){
     // 12. Valcarcel Julian
 
     // 13. Vilca Aguilar Luis
+    
+    cout << endl;
+    cout << "Demostracion de encendido de bits desde el bit 0 hasta el bit n:" << endl;
+    x = 32;
+
+    cout << "X antes de encender los bits desde el 0 hasta el 3: " << bitset<8>(x) << endl;
+    setLowerBits(x, 3); // Enciende todos los bits desde el bit 0 hasta el bit 3 de x
+    cout << "X después de encender los bits desde el 0 hasta el 3: " << bitset<8>(x) << endl;
+    cout << "X en decimal: " << dec << x << endl;
+    cout << "X en binario: " << bitset<8>(x) << endl;
 
     // 14. Vinatea Chávez Camilo Jorge
 
