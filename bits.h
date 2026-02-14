@@ -34,6 +34,7 @@ UI crossoverGenetic(UI &child1, UI &child2,int k);
 // 6. Mallaupoma Cesar
 
 // 7. Miranda Zarate Jorge Luis
+void reverse(UI &x);
 
 // 8. Riveros Guevara
 

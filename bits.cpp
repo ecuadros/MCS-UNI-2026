@@ -86,6 +86,17 @@ UI invertirBits(UI &x, UI CantidadBits) {
 // 6. Mallaupoma Cesar
 
 // 7. Miranda Zarate Jorge Luis
+void reverse(UI &x){
+    UI rev = 0;
+    while(x > 0){
+        rev <<= 1;
+        if(x & 1){
+            rev |= 1;
+        }
+        x >>= 1;
+    }
+    x = rev;
+}
 
 // 8. Riveros Guevara
 
@@ -180,7 +191,7 @@ void DemoBits(){
 
     x = x + 5; // x += 5;
     x <<= 2; // x = x << 2;
-    cout << "X después de sumar 5 y desplazar a la izquierda 2: " << x << endl;
+    cout << "X después de sumar 5 y desplazar a la izquierda: 2" << x << endl;
     x |= 0b00001111; // x = x | 0b00001111;
     cout << "X después de hacer OR con 0b00001111: " << x << endl";
     x ^= 0b11110000; // x = x ^ 0b11110000;
@@ -217,6 +228,9 @@ void DemoBits(){
     // 6. Mallaupoma Cesar
 
     // 7. Miranda Zarate Jorge Luis
+    x = 0b1111000011100000;
+    reverse(x);
+    cout <<  "X después de invertir sus bits 0b1111000011100000: " << bitset<16>(x) << endl;
 
     // 8. Riveros Guevara
 
