@@ -38,6 +38,18 @@ void setBitToValue(UI &x, int n, bool v) {
 // 4. Lopez Flores Royer Amed
 
 // 5. López Sandoval, Heiner
+// Invertit los bits de x, indicando con cuantos bits se trabaja
+UI invertirBits(UI &x, UI CantidadBits) {
+    UI resultado = 0;
+    for (UI i = 0; i < CantidadBits; i++) {
+        // Extraer el bit i de num
+        UI bit = (x >> i) & 1;
+        // Colocar ese bit en la posición invertida
+        resultado |= (bit << (CantidadBits - 1 - i));
+    }
+    return resultado;
+}
+
 
 // 6. Mallaupoma Cesar
 
@@ -46,8 +58,27 @@ void setBitToValue(UI &x, int n, bool v) {
 // 8. Riveros Guevara
 
 // 9. Segovia Giancarlo
+// Revertir todos los bits de x
+void reversebits(UI &x) {
+    UI res = 0;
+    for(int i = 0; i < 32; i++) {
+        res <<= 1;
+        res |= (x & 1);
+        x >>= 1;
+    }
+    x = res;
+}
 
 // 10. Suarez Maciel Susana Isabel.
+    // Cuenta la cantidad de bits en 1 (popcount) usando Brian Kernighan
+    int countOnes(UI x){
+        int count = 0;
+        while (x != 0){
+            x &= (x - 1); // elimina el bit 1 menos significativo
+            count++;
+        }
+        return count;
+    }
 
 // 11. Tellez Jhon
 
@@ -55,13 +86,13 @@ void setBitToValue(UI &x, int n, bool v) {
 
 // 13. Vilca Aguilar Luis
 
-// 14. Vinatea Chávez Camilo Jorge  
+// 14. Vinatea Chávez Camilo Jorge
 
 
 
 void DemoBits(){
     UI x = 5, y = 11, z;
-    
+
     cout << "X en binario: " << bitset<4>(x) << endl;
     cout << "Y en binario: " << bitset<4>(y) << endl;
 
@@ -96,9 +127,9 @@ void DemoBits(){
 
     x = x + 5; // x += 5;
     x <<= 2; // x = x << 2;
-    cout << "X después de sumar 5 y desplazar a la izquierda 2:"
-    x |= 0b00001111; // x = x | 0b00001111";
-    cout << "X después de hacer OR con 0b00001111: " << x << endl;
+    cout << "X después de sumar 5 y desplazar a la izquierda 2" << x << endl;
+    x |= 0b00001111; // x = x | 0b00001111;
+    cout << "X después de hacer OR con 0b00001111: " << x << endl";
     x ^= 0b11110000; // x = x ^ 0b11110000;
 
     // 1. Bernaola Gayoso - César Raúl
@@ -112,6 +143,10 @@ void DemoBits(){
     // 4. Lopez Flores Royer Amed
 
     // 5. López Sandoval, Heiner
+    x = 13 ;
+    cout << "Antes de invertir los bits:" << bitset<8>(x) << endl ;
+    x = invertirBits(x,8) ;
+    cout << "Despues de invertir los bits:" << bitset<8>(x) << endl ;
 
     // 6. Mallaupoma Cesar
 
@@ -120,8 +155,16 @@ void DemoBits(){
     // 8. Riveros Guevara
 
     // 9. Segovia Giancarlo
+    x = 0b11001000;
+    cout << "X antes de hacer reverse: " << bitset<32>(x) << endl;
+    reversebits(x);
+    cout << "X después de hacer reverse: " << bitset<32>(x) << endl;
 
-    // 10. Suarez Maciel Susana Isabel.
+    // 10. Suarez Maciel Susana Isabel
+    
+    UI a = 0b10110100;
+    cout << "a en binario: " << bitset<8>(a) << endl;
+    cout << "Cantidad de bits en 1: " << countOnes(a) << "\n\n";
 
     // 11. Tellez Jhon
 
@@ -129,6 +172,6 @@ void DemoBits(){
 
     // 13. Vilca Aguilar Luis
 
-    // 14. Vinatea Chávez Camilo Jorge  
+    // 14. Vinatea Chávez Camilo Jorge
 
 }
