@@ -115,7 +115,7 @@ public:
     }
 };
 
-ostream &operator<<(ostream &os, const Complex &c){
+inline ostream &operator<<(ostream &os, const Complex &c){
     return os << c.getReal() << " + " << c.getImag() << "i" << endl;
 }
 

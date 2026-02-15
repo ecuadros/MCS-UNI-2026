@@ -64,7 +64,7 @@ void DemoComplex(){
 
     // 7. Miranda Zarate Jorge Luis
     c1 = c1 ^ 3;
-    cout << "Sobrecarga de operador ^" << c1 << endl;
+    cout << "Sobrecarga de operador ^: " << c1 << endl;
 
     // 8. Riveros Guevara
     // c1 = c2 * c3 ^ 5 - c4 + *pC;
