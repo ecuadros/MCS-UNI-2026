@@ -81,7 +81,24 @@ public:
     // 3. Diaz Tapia Adderly
 
     // 4. Lopez Flores Royer Amed
-
+    // Según la IA mejor definir el operador *=, 
+    //y luego definir el operador * en términos de *= 
+    //por que así se evita la duplicación de código y 
+    //se mejora el mantenimiento, además de que el operador
+    // *= es más eficiente para objetos grandes como los complejos, 
+    //ya que modifica el objeto actual en lugar de crear uno nuevo.
+    Complex& operator*=(const Complex& other) {
+        Real newReal = getReal() * other.getReal() - getImag() * other.getImag();
+        Imag newImag = getReal() * other.getImag() + getImag() * other.getReal();
+        setReal(newReal);
+        setImag(newImag);
+        /*
+        No definir asi 
+        //setReal(getReal() * other.getReal() - getImag() * other.getImag());
+        //setImag(getReal() * other.getImag() + getImag() * other.getReal());
+        */
+        return *this;
+    }
     // 5. López Sandoval, Heiner
 
     // 6. Mallaupoma Cesar

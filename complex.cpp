@@ -55,7 +55,12 @@ void DemoComplex(){
 
     // 4. Lopez Flores Royer Amed
     // c1 *= c2;
-
+    cout<<"Demo Royer Lopez:"<<endl;
+    cout<<"C1:                    "<<c1;
+    cout<<"C2:                    "<<c2;
+    c1 *= c2;
+    cout<<"Resultado de c1 *= c2: "<<c1;
+    cout<<endl;
     // 5. López Sandoval, Heiner
     // c1 /= c2;
 
