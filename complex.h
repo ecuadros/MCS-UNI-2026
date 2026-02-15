@@ -26,8 +26,11 @@ public:
     // 7. Si se define un constructor con parámetros, el compilador no genera el constructor por defecto.
     Complex(Real r = 0.0, Imag i = 0.0) : m_real(r), m_imag(i) {} ///< Constructor con valores por defecto
     Complex(const Complex& other) 
-        : Complex(other.m_real, other.m_imag) {} ///< Constructor de copia
-
+        : Complex(other.m_real, other.m_imag) { ///< Constructor de copia
+        cout << "Copia de: " << other.m_real << ", " << other.m_imag << endl;
+    }
+    // TODO: Crear Move constructor
+    
     /** Destructor:
     // 1. Tiene el mismo nombre que la clase pero con ~ al inicio.
     // 2. No tiene tipo de retorno (ni siquiera void).
@@ -49,12 +52,62 @@ public:
     void setImag(Imag i) { m_imag = i; } ///< Establecer la parte imaginaria
     Imag getImag() const { return m_imag; } ///< Obtener la parte imaginaria
 
-    // Complex operator+(const Complex& other) const; ///< Suma de números complejos
-    // Complex operator-(const Complex& other) const; ///< Resta de números complejos
-    // Complex operator*(const Complex& other) const; ///< Multiplicación de números complejos
-    // Complex operator/(const Complex& other) const; ///< División de números complejos
+    Complex &operator=(const Complex& other) { ///< Suma de números complejos
+        setReal(other.getReal());
+        setImag(other.getImag());
+        return *this;
+    }
+    Complex operator+(const Complex& other) const{ ///< Suma de números complejos
+        return Complex(getReal()+other.getReal(), getImag()+other.getImag());
+    }
+    Complex operator-(const Complex& other) const{ ///< Resta de números complejos
+        return Complex(0, 0);
+    }
 
+    Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos
+        return Complex(1, 1);
+    } 
+    
+    Complex operator/(const Complex& other) const{ ///< División de números complejos
+        return Complex(1, 1);
+    }
+
+    // 1. Bernaola Gayoso - César Raúl
+
+    // 2. Cuadros-Vargas Ernesto
+
+    // 3. Diaz Tapia Adderly
+
+    // 4. Lopez Flores Royer Amed
+
+    // 5. López Sandoval, Heiner
+
+    // 6. Mallaupoma Cesar
+
+    // 7. Miranda Zarate Jorge Luis
+
+    // 8. Riveros Guevara
+
+    // 9. Segovia Giancarlo
+
+    // 10. Suarez Maciel Susana Isabel.
+
+    // 11. Tellez Jhon
+
+    // 12. Valcarcel Julian
+
+    // 13. Vilca Aguilar Luis
+
+    // 14. Vinatea Chávez Camilo Jorge  
+
+    void PrintX(ostream &os) const{
+        os << getReal() << " + " << getImag() << "i" << endl;
+    }
 };
+
+ostream &operator<<(ostream &os, const Complex &c){
+    return os << c.getReal() << " + " << c.getImag() << "i" << endl;
+}
 
 void DemoComplex();
 
