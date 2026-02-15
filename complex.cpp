@@ -89,6 +89,8 @@ void DemoComplex(){
 
     // 11. Tellez Jhon
     // c1 = c2 * c3;
+    Complex c1 = c2 * c3;
+    cout << "C1: " << c1 << endl;
 
     // 12. Valcarcel Julian
     

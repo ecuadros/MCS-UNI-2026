@@ -131,6 +131,12 @@ public:
     // 10. Suarez Maciel Susana Isabel.
 
     // 11. Tellez Jhon
+        Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos
+        double real = getReal() * other.getReal() - getImag() * other.getImag();
+        double imag = getReal() * other.getImag() + getImag() * other.getReal();
+        
+            return Complex(real, imag);
+    } 
 
     // 12. Valcarcel Julian
 
