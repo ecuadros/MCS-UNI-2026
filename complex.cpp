@@ -99,8 +99,16 @@ void DemoComplex(){
     // c1 = c2 + 6r;
 
     // 14. Vinatea Chávez Camilo Jorge
-    // c1 = c2 / c3; 
-    // c1 = c2 + 7i;
+    cout << "\nDemo Camilo Vinatea" << endl;
+    cout << "Division de c2 entre c3:" << endl;
+    c1 = c2/c3;
+    cout << "(" << c2 << ")" << "/" << "(" << c3 << ")" << " = " << c1 << endl;
+    //c1.PrintX(cout);
+    cout << endl;
+    cout << "Suma de complejo mas numero real puro:" << endl;
+    float realNum = -6.5;
+    c1 = c2 + realNum; // Suma de complejo con numero real
+    cout << c2 << " + " << realNum << " = " << c1 << endl;
 
     cout << "Destruyendo objeto dinámico:" << endl;
     delete pC; // Llama al destructor para liberar la memoria asignada a pC
