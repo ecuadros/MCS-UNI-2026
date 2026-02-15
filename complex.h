@@ -52,6 +52,10 @@ public:
     void setImag(Imag i) { m_imag = i; } ///< Establecer la parte imaginaria
     Imag getImag() const { return m_imag; } ///< Obtener la parte imaginaria
 
+    Complex conjugate() const { ///< Conjugado de un número complejo
+        return Complex(getReal(), -getImag());
+    }
+
     Complex &operator=(const Complex& other) { ///< Suma de números complejos
         setReal(other.getReal());
         setImag(other.getImag());
@@ -69,7 +73,15 @@ public:
     } 
     
     Complex operator/(const Complex& other) const{ ///< División de números complejos
-        return Complex(1, 1);
+        Real denominator = other.getReal() * other.getReal() + other.getImag() * other.getImag();
+        if (denominator == 0) {
+            throw invalid_argument("Division by zero");
+        }
+        // Cálculo de numerador multiplicando por la conjugada del denominador
+        Complex numerator = (*this) * other.conjugate();
+        // Se retorna el resultado dividiendo el numerador por el denominador
+        return Complex(numerator.getReal() / denominator,
+                    numerator.getImag() / denominator);
     }
 
     // Mas operadores aqui
