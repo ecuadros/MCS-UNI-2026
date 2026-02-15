@@ -52,6 +52,9 @@ void DemoComplex(){
 
     // 3. Diaz Tapia Adderly
     // c1 -= c2;
+    cout<<"Demo de Adderly Díaz"<<endl;
+    c2 -= c1;
+    cout<<"El resultado de la operación c1 -= c2 es: "<< c2<<endl;
 
     // 4. Lopez Flores Royer Amed
     // c1 *= c2;
