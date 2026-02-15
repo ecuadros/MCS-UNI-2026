@@ -4,6 +4,12 @@
 #include "types.h"
 using namespace std;
 
+template<typename... Args>
+auto Sumar(Args... args) {
+    return (args + ...); // fold expression
+}
+
+
 /**
  * @file complex.h
  * @brief Declaración de la clase Complex.
@@ -73,10 +79,6 @@ public:
     Complex operator-(const Complex& other) const{
     return Complex(m_real - other.m_real, m_imag - other.m_imag);
     }
-
-    Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos
-        return Complex(1, 1);
-    } 
     
     Complex operator/(const Complex& other) const{ ///< División de números complejos
         Real denominator = other.getReal() * other.getReal() + other.getImag() * other.getImag();
@@ -100,7 +102,19 @@ public:
     }
 
     // 2. Cuadros-Vargas Ernesto
+    // Método variadic para sumar a la parte real
+    template<typename... Args>
+    Complex& AddReal(Args... args) {
+        m_real += Sumar(args...);
+        return *this;
+    }
 
+    // Método variadic para sumar a la parte imaginaria
+    template<typename... Args>
+    Complex& AddImag(Args... args) {
+        m_imag += Sumar(args...);
+        return *this;
+    }
     // 3. Diaz Tapia Adderly
     Complex &operator-=(const Complex& other) {
         m_real -= other.getReal();
@@ -155,11 +169,7 @@ public:
     // 9. Segovia Giancarlo
 
     // 10. Suarez Maciel Susana Isabel
-    Complex& operator-=(const Complex& other){
-    m_real -= other.m_real;
-    m_imag -= other.m_imag;
-    return *this;
-    }
+    
 
     // 11. Tellez Jhon
     Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos
@@ -181,8 +191,32 @@ public:
 };
 
 inline ostream &operator<<(ostream &os, const Complex &c){
-    return os << c.getReal() << " + " << c.getImag() << "i" << endl;
+    return os << c.getReal() << " + " << c.getImag() << "i";
 }
+
+// Leer un Complejo desde un istream
+inline istream &operator>>(istream &is, Complex &c){
+    Real real;
+    Imag imag;
+    is >> real >> imag;
+    c.setReal(real);
+    c.setImag(imag);
+    return is;
+}
+
+// User defined literal
+// inline Complex operator"" i(long double i) { ///< Literal para números imaginarios (flotante)
+//     return Complex(0.0, static_cast<Imag>(i));
+// }
+// inline Complex operator"" i(long double i) { ///< Literal para números imaginarios (entero)
+//     return Complex(0.0, static_cast<Imag>(i));
+// }
+// inline Complex operator"" r(long double r) { ///< Literal para números reales (flotante)
+//     return Complex(static_cast<Real>(r), 0.0);
+// }
+// inline Complex operator"" r(long double r) { ///< Literal para números reales (entero)
+//     return Complex(static_cast<Real>(r), 0.0);
+// }
 
 void DemoComplex();
 

@@ -50,6 +50,14 @@ void DemoComplex(){
     cout << "suma c1 += c2: " << c1 << endl;
 
     // 2. Cuadros-Vargas Ernesto
+    cout << "Cuadros-Vargas Ernesto: " << endl;
+    // Añadir una funcion variadic
+    cout << "c1: " << c1 << endl;
+    c1.AddReal(5, 6, 7, 8); 
+    cout << "c1: " << c1 << endl;
+    c1.AddImag(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    cout << "c1: " << c1 << endl;
+    cout << "c2: " << c2 << endl;
 
     // 3. Diaz Tapia Adderly
     // c1 -= c2;
@@ -92,7 +100,7 @@ void DemoComplex(){
 
     // 11. Tellez Jhon
     // c1 = c2 * c3;
-    Complex c1 = c2 * c3;
+    c1 = c2 * c3;
     cout << "C1: " << c1 << endl;
 
     // 12. Valcarcel Julian
@@ -109,7 +117,7 @@ void DemoComplex(){
     //c1.PrintX(cout);
     cout << endl;
     cout << "Suma de complejo mas numero real puro:" << endl;
-    float realNum = -6.5;
+    Real realNum = -6.5;
     c1 = c2 + realNum; // Suma de complejo con numero real
     cout << c2 << " + " << realNum << " = " << c1 << endl;
 
