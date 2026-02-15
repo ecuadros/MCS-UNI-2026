@@ -142,9 +142,9 @@ public:
 
     // 7. Miranda Zarate Jorge Luis
     // Función para calcular la potencia de un número complejo (z^n)
-    Complex operator^(int n){
+    Complex operator^(UI n){
         Complex result(1.0, 0.0);
-        for(int i = 0; i < n; ++i){
+        for(UI i = 0; i < n; ++i){
             result = result * (*this);
         }
         return result;
