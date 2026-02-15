@@ -24,9 +24,11 @@ public:
     // 5. Un constructor puede llamar a otro constructor (delegación de constructores).
     // 6. Si no se define un constructor, el compilador genera uno por defecto (sin parámetros).
     // 7. Si se define un constructor con parámetros, el compilador no genera el constructor por defecto.
-    Complex(Real r = 0.0, Imag i = 0.0) : m_real(r), m_imag(i) {} ///< Constructor con valores por defecto
-    Complex(const Complex& other) 
-        : Complex(other.m_real, other.m_imag) { ///< Constructor de copia
+    Complex(Real r = 0.0, Imag i = 0.0) { ///< Constructor con valores por defecto
+        setReal(r);     setImag(i);
+    } 
+    Complex(const Complex& other) { ///< Constructor de copia
+        setReal(other.getReal());     setImag(other.getImag());
         cout << "Copia de: " << other.m_real << ", " << other.m_imag << endl;
     }
     // TODO: Crear Move constructor
@@ -66,10 +68,6 @@ public:
     }
     Complex operator-(const Complex& other) const{ ///< Resta de números complejos
         return Complex(0, 0);
-    }
-
-    Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos
-        return Complex(1, 1);
     } 
     
     Complex operator/(const Complex& other) const{ ///< División de números complejos
@@ -91,11 +89,11 @@ public:
     // 2. Cuadros-Vargas Ernesto
 
     // 3. Diaz Tapia Adderly
-    Complex& operator-=(const Complex& other) {
-        this->m_real -= other.m_real;
-        this->m_imag -= other.m_imag;
-    return *this; 
-}
+    Complex &operator-=(const Complex& other) {
+        m_real -= other.getReal();
+        m_imag -= other.getImag();
+        return *this; 
+    }
     // 4. Lopez Flores Royer Amed
     // Según la IA mejor definir el operador *=, 
     //y luego definir el operador * en términos de *= 
@@ -108,11 +106,6 @@ public:
         Imag newImag = getReal() * other.getImag() + getImag() * other.getReal();
         setReal(newReal);
         setImag(newImag);
-        /*
-        No definir asi 
-        //setReal(getReal() * other.getReal() - getImag() * other.getImag());
-        //setImag(getReal() * other.getImag() + getImag() * other.getReal());
-        */
         return *this;
     }
     // 5. López Sandoval, Heiner
@@ -143,11 +136,11 @@ public:
     // 10. Suarez Maciel Susana Isabel.
 
     // 11. Tellez Jhon
-        Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos
-        double real = getReal() * other.getReal() - getImag() * other.getImag();
-        double imag = getReal() * other.getImag() + getImag() * other.getReal();
-        
-            return Complex(real, imag);
+    Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos
+        Real real = getReal() * other.getReal() - getImag() * other.getImag();
+        Imag imag = getReal() * other.getImag() + getImag() * other.getReal();
+
+        return Complex(real, imag);
     } 
 
     // 12. Valcarcel Julian
@@ -161,7 +154,7 @@ public:
     }
 };
 
-ostream &operator<<(ostream &os, const Complex &c){
+inline ostream &operator<<(ostream &os, const Complex &c){
     return os << c.getReal() << " + " << c.getImag() << "i" << endl;
 }
 
