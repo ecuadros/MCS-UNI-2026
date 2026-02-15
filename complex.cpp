@@ -52,12 +52,26 @@ void DemoComplex(){
 
     // 3. Diaz Tapia Adderly
     // c1 -= c2;
+    cout<<"Demo de Adderly Díaz"<<endl;
+    c2 -= c1;
+    cout<<"El resultado de la operación c1 -= c2 es: "<< c2<<endl;
 
     // 4. Lopez Flores Royer Amed
     // c1 *= c2;
-
+    cout<<"Demo Royer Lopez:"<<endl;
+    cout<<"C1:                    "<<c1;
+    cout<<"C2:                    "<<c2;
+    c1 *= c2;
+    cout<<"Resultado de c1 *= c2: "<<c1;
+    cout<<endl;
     // 5. López Sandoval, Heiner
     // c1 /= c2;
+    Complex c77 = c1 / c2 ;
+    cout << "c77: " ;
+    c77.PrintX(cout) ;
+    c77 /= c2 ;
+    cout << "c77: " ;
+    c77.PrintX(cout) ;
 
     // 6. Mallaupoma Cesar
     // 
@@ -76,6 +90,8 @@ void DemoComplex(){
 
     // 11. Tellez Jhon
     // c1 = c2 * c3;
+    Complex c1 = c2 * c3;
+    cout << "C1: " << c1 << endl;
 
     // 12. Valcarcel Julian
     
@@ -84,8 +100,16 @@ void DemoComplex(){
     // c1 = c2 + 6r;
 
     // 14. Vinatea Chávez Camilo Jorge
-    // c1 = c2 / c3; 
-    // c1 = c2 + 7i;
+    cout << "\nDemo Camilo Vinatea" << endl;
+    cout << "Division de c2 entre c3:" << endl;
+    c1 = c2/c3;
+    cout << "(" << c2 << ")" << "/" << "(" << c3 << ")" << " = " << c1 << endl;
+    //c1.PrintX(cout);
+    cout << endl;
+    cout << "Suma de complejo mas numero real puro:" << endl;
+    float realNum = -6.5;
+    c1 = c2 + realNum; // Suma de complejo con numero real
+    cout << c2 << " + " << realNum << " = " << c1 << endl;
 
     cout << "Destruyendo objeto dinámico:" << endl;
     delete pC; // Llama al destructor para liberar la memoria asignada a pC

@@ -24,9 +24,11 @@ public:
     // 5. Un constructor puede llamar a otro constructor (delegación de constructores).
     // 6. Si no se define un constructor, el compilador genera uno por defecto (sin parámetros).
     // 7. Si se define un constructor con parámetros, el compilador no genera el constructor por defecto.
-    Complex(Real r = 0.0, Imag i = 0.0) : m_real(r), m_imag(i) {} ///< Constructor con valores por defecto
-    Complex(const Complex& other) 
-        : Complex(other.m_real, other.m_imag) { ///< Constructor de copia
+    Complex(Real r = 0.0, Imag i = 0.0) { ///< Constructor con valores por defecto
+        setReal(r);     setImag(i);
+    } 
+    Complex(const Complex& other) { ///< Constructor de copia
+        setReal(other.getReal());     setImag(other.getImag());
         cout << "Copia de: " << other.m_real << ", " << other.m_imag << endl;
     }
     // TODO: Crear Move constructor
@@ -52,6 +54,10 @@ public:
     void setImag(Imag i) { m_imag = i; } ///< Establecer la parte imaginaria
     Imag getImag() const { return m_imag; } ///< Obtener la parte imaginaria
 
+    Complex conjugate() const { ///< Conjugado de un número complejo
+        return Complex(getReal(), -getImag());
+    }
+
     Complex &operator=(const Complex& other) { ///< Suma de números complejos
         setReal(other.getReal());
         setImag(other.getImag());
@@ -73,7 +79,15 @@ public:
     } 
     
     Complex operator/(const Complex& other) const{ ///< División de números complejos
-        return Complex(1, 1);
+        Real denominator = other.getReal() * other.getReal() + other.getImag() * other.getImag();
+        if (denominator == 0) {
+            throw invalid_argument("Division by zero");
+        }
+        // Cálculo de numerador multiplicando por la conjugada del denominador
+        Complex numerator = (*this) * other.conjugate();
+        // Se retorna el resultado dividiendo el numerador por el denominador
+        return Complex(numerator.getReal() / denominator,
+                    numerator.getImag() / denominator);
     }
 
     // Mas operadores aqui
@@ -83,10 +97,41 @@ public:
     // 2. Cuadros-Vargas Ernesto
 
     // 3. Diaz Tapia Adderly
-
+    Complex &operator-=(const Complex& other) {
+        m_real -= other.getReal();
+        m_imag -= other.getImag();
+        return *this; 
+    }
     // 4. Lopez Flores Royer Amed
-
+    // Según la IA mejor definir el operador *=, 
+    //y luego definir el operador * en términos de *= 
+    //por que así se evita la duplicación de código y 
+    //se mejora el mantenimiento, además de que el operador
+    // *= es más eficiente para objetos grandes como los complejos, 
+    //ya que modifica el objeto actual en lugar de crear uno nuevo.
+    Complex& operator*=(const Complex& other) {
+        Real newReal = getReal() * other.getReal() - getImag() * other.getImag();
+        Imag newImag = getReal() * other.getImag() + getImag() * other.getReal();
+        setReal(newReal);
+        setImag(newImag);
+        return *this;
+    }
     // 5. López Sandoval, Heiner
+
+    /*
+    // Operador /
+    Complex operator/(const Complex& other) const {
+        double denom = other.m_real * other.m_real + other.m_imag * other.m_imag;
+        return Complex((m_real * other.m_real + m_imag * other.m_imag) / denom,
+                       (m_imag * other.m_real - m_real * other.m_imag) / denom);
+    }
+    */
+
+    // Operador /=
+    Complex& operator/=(const Complex& other) {
+        *this = *this / other;  // reutiliza operator/
+        return *this;
+    }
 
     // 6. Mallaupoma Cesar
 
@@ -104,6 +149,12 @@ public:
     }
 
     // 11. Tellez Jhon
+    Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos
+        Real real = getReal() * other.getReal() - getImag() * other.getImag();
+        Imag imag = getReal() * other.getImag() + getImag() * other.getReal();
+
+        return Complex(real, imag);
+    } 
 
     // 12. Valcarcel Julian
 
@@ -116,7 +167,7 @@ public:
     }
 };
 
-ostream &operator<<(ostream &os, const Complex &c){
+inline ostream &operator<<(ostream &os, const Complex &c){
     return os << c.getReal() << " + " << c.getImag() << "i" << endl;
 }
 
