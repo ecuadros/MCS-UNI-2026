@@ -72,6 +72,8 @@ public:
         return Complex(1, 1);
     }
 
+    // Mas operadores aqui
+    
     // 1. Bernaola Gayoso - César Raúl
 
     // 2. Cuadros-Vargas Ernesto
