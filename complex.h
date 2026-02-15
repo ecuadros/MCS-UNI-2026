@@ -66,8 +66,16 @@ public:
     Complex operator+(const Complex& other) const{ ///< Suma de números complejos
         return Complex(getReal()+other.getReal(), getImag()+other.getImag());
     }
-    Complex operator-(const Complex& other) const{ ///< Resta de números complejos
-        return Complex(0, 0);
+    // Complex operator-(const Complex& other) const{ ///< Resta de números complejos
+    //     return Complex(0, 0);
+    // }
+    //susana
+    Complex operator-(const Complex& other) const{
+    return Complex(m_real - other.m_real, m_imag - other.m_imag);
+    }
+
+    Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos
+        return Complex(1, 1);
     } 
     
     Complex operator/(const Complex& other) const{ ///< División de números complejos
@@ -133,7 +141,12 @@ public:
 
     // 9. Segovia Giancarlo
 
-    // 10. Suarez Maciel Susana Isabel.
+    // 10. Suarez Maciel Susana Isabel
+    Complex& operator-=(const Complex& other){
+    m_real -= other.m_real;
+    m_imag -= other.m_imag;
+    return *this;
+    }
 
     // 11. Tellez Jhon
     Complex operator*(const Complex& other) const{ ///< Multiplicación de números complejos

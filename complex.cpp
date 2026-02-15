@@ -85,7 +85,8 @@ void DemoComplex(){
     // 9. Segovia Giancarlo
 
     // 10. Suarez Maciel Susana Isabel.
-    // c1 = c2 - c3;
+        c1 = c2 - c3;
+        cout << "c1 = " << c1;
 
     // 11. Tellez Jhon
     // c1 = c2 * c3;
