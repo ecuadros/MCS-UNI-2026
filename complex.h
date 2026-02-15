@@ -136,6 +136,14 @@ public:
     // 6. Mallaupoma Cesar
 
     // 7. Miranda Zarate Jorge Luis
+    // Función para calcular la potencia de un número complejo (z^n)
+    Complex operator^(int n){
+        Complex result(1.0, 0.0);
+        for(int i = 0; i < n; ++i){
+            result = result * (*this);
+        }
+        return result;
+    }
 
     // 8. Riveros Guevara
 
