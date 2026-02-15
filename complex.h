@@ -79,7 +79,11 @@ public:
     // 2. Cuadros-Vargas Ernesto
 
     // 3. Diaz Tapia Adderly
-
+    Complex& operator-=(const Complex& other) {
+        this->m_real -= other.m_real;
+        this->m_imag -= other.m_imag;
+    return *this; 
+}
     // 4. Lopez Flores Royer Amed
     // Según la IA mejor definir el operador *=, 
     //y luego definir el operador * en términos de *= 
