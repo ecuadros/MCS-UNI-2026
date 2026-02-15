@@ -17,6 +17,7 @@ auto Sumar(Args... args) {
  *        proporciona operaciones básicas como suma,
  *        resta, multiplicación y división.
  */
+
 class Complex{
 private:
     Real m_real; ///< Parte real del número complejo
@@ -183,6 +184,8 @@ public:
 
     // 13. Vilca Aguilar Luis
 
+    // La suma de operadores de UDL van fuera de la clase
+
     // 14. Vinatea Chávez Camilo Jorge  
 
     void PrintX(ostream &os) const{
@@ -203,6 +206,24 @@ inline istream &operator>>(istream &is, Complex &c){
     c.setImag(imag);
     return is;
 }
+
+inline Complex operator""r(unsigned long long r) {      //Literal para números reales (entero)
+    return Complex(static_cast<Real>(r), 0.0);
+}
+inline Complex operator""r(long double r) {             //Literal para números reales (entero)
+    return Complex(static_cast<Real>(r), 0.0);
+}
+
+inline Complex operator+(const Complex& c, Real r) {    //Suma de complejo con real
+        return Complex(c.getReal() + r, c.getImag());   // C1 = C2 + 6r
+    }
+    
+inline Complex operator+(Real r, const Complex& c) {    //Suma de real con complejo
+    return Complex(c.getReal() + r, c.getImag());       // C1 = 6r + C2
+}
+
+
+
 
 // User defined literal
 // inline Complex operator"" i(long double i) { ///< Literal para números imaginarios (flotante)
