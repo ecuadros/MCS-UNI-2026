@@ -93,6 +93,11 @@ public:
     // Mas operadores aqui
     
     // 1. Bernaola Gayoso - César Raúl
+    Complex& operator+=(const Complex& other) {
+        m_real += other.m_real;
+        m_imag += other.m_imag;
+        return *this;
+    }
 
     // 2. Cuadros-Vargas Ernesto
 

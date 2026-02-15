@@ -46,7 +46,8 @@ void DemoComplex(){
     //                                     cout
 
     // 1. Bernaola Gayoso - César Raúl
-    // c1 += c2;
+    c1 += c2;
+    cout << "suma c1 += c2: " << c1 << endl;
 
     // 2. Cuadros-Vargas Ernesto
 
