@@ -58,6 +58,12 @@ void DemoComplex(){
 
     // 5. López Sandoval, Heiner
     // c1 /= c2;
+    Complex c77 = c1 / c2 ;
+    cout << "c77: " ;
+    c77.PrintX(cout) ;
+    c77 /= c2 ;
+    cout << "c77: " ;
+    c77.PrintX(cout) ;
 
     // 6. Mallaupoma Cesar
     // 

@@ -84,6 +84,21 @@ public:
 
     // 5. López Sandoval, Heiner
 
+    /*
+    // Operador /
+    Complex operator/(const Complex& other) const {
+        double denom = other.m_real * other.m_real + other.m_imag * other.m_imag;
+        return Complex((m_real * other.m_real + m_imag * other.m_imag) / denom,
+                       (m_imag * other.m_real - m_real * other.m_imag) / denom);
+    }
+    */
+
+    // Operador /=
+    Complex& operator/=(const Complex& other) {
+        *this = *this / other;  // reutiliza operator/
+        return *this;
+    }
+
     // 6. Mallaupoma Cesar
 
     // 7. Miranda Zarate Jorge Luis
