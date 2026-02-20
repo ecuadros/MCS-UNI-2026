@@ -55,7 +55,7 @@ void DemoComplex(){
     cout << "c1: " << c1 << endl;
     c1.AddReal(5, 6, 7, 8); 
     cout << "c1: " << c1 << endl;
-    c1.AddImag(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    c1.AddImag(1.2, 2.5, 3, 4, 5, 6, 7, 8, 9, 10);
     cout << "c1: " << c1 << endl;
     cout << "c2: " << c2 << endl;
 

@@ -4,6 +4,7 @@
 #include "types.h"
 using namespace std;
 
+// Variadic templates
 template<typename... Args>
 auto Sumar(Args... args) {
     return (args + ...); // fold expression
