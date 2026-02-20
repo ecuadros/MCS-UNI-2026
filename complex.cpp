@@ -108,6 +108,19 @@ void DemoComplex(){
 
     // 13. Vilca Aguilar Luis
     // c1 = c2 + 6r;
+    cout << "\nDemo Vilca Aguilar" << endl;
+    cout << "c1 = (3.0 + 4.0i) + 6r" << endl;
+    c2.setReal(3.0);
+    c2.setImag(4.0);
+    
+    c1 = c2 + 6r;
+    cout << "C1: "<< endl;
+    c1.PrintX(cout);
+
+    cout << "c1 = 6r + (9.0 + 4.0i)" << endl;
+    c1 = 6r + c1;
+    cout << "C1: "<< endl;
+    c1.PrintX(cout);
 
     // 14. Vinatea Chávez Camilo Jorge
     cout << "\nDemo Camilo Vinatea" << endl;
