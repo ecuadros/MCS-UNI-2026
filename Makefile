@@ -10,7 +10,8 @@ SRCS = main.cpp util.cpp Pointers.cpp \
 	   geometry/shape.cpp \
 	   geometry/rectangle.cpp \
 	   geometry/circle.cpp \
-	   geometry/triangle.cpp
+	   geometry/triangle.cpp \
+	   geometry/square.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

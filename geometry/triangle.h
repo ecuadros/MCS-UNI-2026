@@ -8,9 +8,11 @@ private:
     Width  base;
     Height height;
 public:
-    CTriangle(Width b, Height h);
+    CTriangle(string name, Width b, Height h);
+    virtual ~CTriangle();
+
     Area2d GetArea() const override;
-    string GetName() const override { return string("Triangle"); };
+    string GetClassName() const override { return string("Triangle"); };
     ostream& Test(ostream &os) const override { return os << "TestTriangle"; };
 };
 
