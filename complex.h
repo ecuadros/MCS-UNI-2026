@@ -1,11 +1,12 @@
 #ifndef __COMPLEX_H__
 #define __COMPLEX_H__
-#include "types.h"
 #include <iostream>
+#include "types.h"
 using namespace std;
 
 // Variadic templates
-template <typename... Args> auto Sumar(Args... args) {
+template<typename... Args>
+auto Sumar(Args... args) {
   return (args + ...); // fold expression
 }
 
@@ -17,7 +18,7 @@ template <typename... Args> auto Sumar(Args... args) {
  *        resta, multiplicación y división.
  */
 
-class Complex {
+class Complex{
 private:
   Real m_real; ///< Parte real del número complejo
   Imag m_imag; ///< Parte imaginaria del número complejo
@@ -115,13 +116,15 @@ public:
 
   // 2. Cuadros-Vargas Ernesto
   // Método variadic para sumar a la parte real
-  template <typename... Args> Complex &AddReal(Args... args) {
+    template<typename... Args>
+    Complex& AddReal(Args... args) {
     m_real += Sumar(args...);
     return *this;
   }
 
   // Método variadic para sumar a la parte imaginaria
-  template <typename... Args> Complex &AddImag(Args... args) {
+    template<typename... Args>
+    Complex& AddImag(Args... args) {
     m_imag += Sumar(args...);
     return *this;
   }
@@ -217,11 +220,11 @@ inline istream &operator>>(istream &is, Complex &c) {
 }
 
 // inline Complex operator"" _r(long double r) { // Literal para números reales (entero)
-//   return Complex(static_cast<Real>(r), 0.0);
+//     return Complex(static_cast<Real>(r), 0.0);
 // }
 
 // inline Complex operator"" _i(long double r) { // Literal para números reales (entero)
-//   return Complex(0.0, static_cast<Imag>(r));
+//     return Comple0.0, static_cast<Imag>(r).0);
 // }
 
 inline Complex operator+(const Complex &c, Real r) { // Suma de complejo con

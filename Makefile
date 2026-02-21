@@ -5,7 +5,12 @@ LDFLAGS = -pthread # Añadido -pthread
 TARGET = main
 SRCS = main.cpp util.cpp Pointers.cpp \
 	   bits.cpp \
-	   complex.cpp
+	   complex.cpp \
+	   DemoShapes.cpp \
+	   geometry/shape.cpp \
+	   geometry/rectangle.cpp \
+	   geometry/circle.cpp \
+	   geometry/triangle.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

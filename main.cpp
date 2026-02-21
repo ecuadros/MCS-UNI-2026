@@ -4,6 +4,7 @@
 #include "Pointers.h"
 #include "bits.h"
 #include "complex.h"
+#include "geometry.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ int main(){
     // DemoInicial();
     // DemoPunteros();
     // DemoBits();
-    DemoComplex();
-
+    // DemoComplex();
+    DemoShapes();
     return 0;
 }
