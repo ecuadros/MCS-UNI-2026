@@ -5,8 +5,7 @@
 
 using namespace std;
 
-using T = int;
-
+template <typename T>
 class XVector {
 private:
     T     *m_data;
@@ -22,7 +21,31 @@ public:
     size_t Size() const { return m_size; }
 };
 
-ostream &operator<<(ostream &os, XVector &v){
+template <typename T>
+void XVector<T>::PushBack(const T &value) {
+    if (m_size == m_capacity) {
+      size_t newCapacity = (m_capacity == 0) ? 1 : m_capacity * 2;
+      T *newData = new T[newCapacity];
+      for (size_t i = 0; i < m_size; ++i) {
+        newData[i] = m_data[i];
+      }
+      delete[] m_data;
+      m_data = newData;
+      m_capacity = newCapacity;
+    }
+    m_data[m_size++] = value;
+}
+
+template <typename T>
+T &XVector<T>::operator[](size_t index) {
+    if (index >= m_size) {
+      throw out_of_range("Index out of range");
+    }
+    return m_data[index];
+}
+
+template <typename T>
+ostream &operator<<(ostream &os, XVector<T> &v){
     auto size = v.Size();
     for (size_t i = 0; i < size; ++i)
         os << v[i] << " ";
