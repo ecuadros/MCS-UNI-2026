@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++20 -Wall -g -pthread # Añadido -pthread
+CXXFLAGS = -std=c++2b -Wall -g -pthread -Icontainers # Añadido -pthread
 LDFLAGS = -pthread # Añadido -pthread
 
 TARGET = main
@@ -11,7 +11,8 @@ SRCS = main.cpp util.cpp Pointers.cpp \
 	   geometry/rectangle.cpp \
 	   geometry/circle.cpp \
 	   geometry/triangle.cpp \
-	   geometry/square.cpp
+	   geometry/square.cpp \
+	   containers/xvector.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -5,6 +5,7 @@
 #include "bits.h"
 #include "complex.h"
 #include "geometry.h"
+#include <xvector.h>
 
 using namespace std;
 
@@ -16,6 +17,7 @@ int main(){
     // DemoPunteros();
     // DemoBits();
     // DemoComplex();
-    DemoShapes();
+    // DemoShapes();
+    DemoVector();
     return 0;
 }
