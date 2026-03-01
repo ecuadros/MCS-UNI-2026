@@ -26,8 +26,8 @@ void DemoVector() {
     v.PushBack(5);
     v.PushBack(2);
     v.PushBack(8);
-    for (size_t i = 0; i < v.Size(); ++i) {
-        cout << v[i] << " ";
-    }
-    cout << endl;
+    v[1] = 15;
+    cout << v << endl;
+    v.PushBack(10);
+    cout << v << endl;
 }

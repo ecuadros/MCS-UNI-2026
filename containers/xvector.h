@@ -20,7 +20,16 @@ public:
     void PushBack(const T &value);
     T &operator[](size_t index);
     size_t Size() const { return m_size; }
+
+    friend ostream &operator<<(ostream &os, XVector &v);
 };
+
+ostream &operator<<(ostream &os, XVector &v){
+    auto size = v.Size();
+    for (size_t i = 0; i < size; ++i)
+        os << v[i] << " ";
+    return os;
+}
 
 void DemoVector();
 
