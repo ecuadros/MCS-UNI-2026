@@ -20,8 +20,6 @@ public:
     void PushBack(const T &value);
     T &operator[](size_t index);
     size_t Size() const { return m_size; }
-
-    friend ostream &operator<<(ostream &os, XVector &v);
 };
 
 ostream &operator<<(ostream &os, XVector &v){

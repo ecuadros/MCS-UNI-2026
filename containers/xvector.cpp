@@ -23,11 +23,12 @@ T &XVector::operator[](size_t index) {
 
 void DemoVector() {
     XVector v;
+    int x = 20;
     v.PushBack(5);
     v.PushBack(2);
     v.PushBack(8);
     v[1] = 15;
     cout << v << endl;
-    v.PushBack(10);
-    cout << v << endl;
+    v.PushBack(10); 
+    cout << v << "Otro texto: " << x << endl;
 }
