@@ -2,6 +2,8 @@
 #define __XVECTOR_H__
 
 #include <iostream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -54,11 +56,13 @@ typename Traits::value_type &XVector<Traits>::operator[](size_t index) {
 
 template <typename Traits>
 string XVector<Traits>::toString() const {
-    string s = "";
+    stringstream ss;
     auto size = Size();
+    ss << "[";
     for (size_t i = 0; i < size; ++i)
-        s += to_string(m_data[i]) + " ";
-    return s;
+        ss << m_data[i] << " ";
+    ss << "]";
+    return ss.str();
 }
 
 template <typename Traits>
