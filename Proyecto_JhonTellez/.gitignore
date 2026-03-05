@@ -1,0 +1,9 @@
+main
+*.exe
+test.cpp
+a
+*.o
+*.obj
+*.so
+programa
+Test.txt
