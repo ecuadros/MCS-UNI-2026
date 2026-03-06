@@ -7,7 +7,7 @@ using IntParam = int;
 // #ifdef (__BIG__)
 using T1 = long long;
 using T2 = float;
-using T3 = string;
+using T3 = std::string;
 using UI = unsigned int;
 using Imag = double;
 using Real = double;

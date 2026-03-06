@@ -29,6 +29,7 @@ public:
     value_type &operator[](size_t index);
     size_t Size() const { return m_size; }
     string toString() const;
+    string GetClassName() const { return string("XVector"); };
 };
 
 template <typename Traits>
@@ -58,9 +59,11 @@ template <typename Traits>
 string XVector<Traits>::toString() const {
     stringstream ss;
     auto size = Size();
-    ss << "[";
-    for (size_t i = 0; i < size; ++i)
+    ss << GetClassName() << ":[";
+    for (size_t i = 0; i < size - 1; ++i)
         ss << m_data[i] << " ";
+    if (size > 0)
+        ss << m_data[size - 1];
     ss << "]";
     return ss.str();
 }
@@ -68,6 +71,17 @@ string XVector<Traits>::toString() const {
 template <typename Traits>
 ostream &operator<<(ostream &os, XVector<Traits> &v){
     return os << v.toString();
+}
+
+// FIXME: No se implemento correctamente
+// Operador para leer un XVector desde un stream
+template <typename Traits>
+istream &operator>>(istream &is, XVector<Traits> &v){
+    // value_type value;
+    // while (is >> value) {
+    //     v.PushBack(value);
+    // }
+    return is;
 }
 
 void DemoVector();
