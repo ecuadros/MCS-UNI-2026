@@ -30,7 +30,15 @@ public:
     size_t Size() const { return m_size; }
     string toString() const;
     string GetClassName() const { return string("XVector"); };
+
+    void ForEach(void (*func)(value_type &));
 };
+
+template <typename Traits>
+void XVector<Traits>::ForEach(void (*func)(value_type &)) {
+    for (size_t i = 0; i < m_size; ++i)
+        func(m_data[i]);
+}
 
 template <typename Traits>
 void XVector<Traits>::PushBack(const value_type &value) {
