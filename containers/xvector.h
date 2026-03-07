@@ -2,9 +2,9 @@
 #define __XVECTOR_H__
 
 #include <iostream>
+#include <mutex>
 #include <sstream>
 #include <string>
-#include <mutex>
 
 using namespace std;
 
@@ -32,37 +32,36 @@ public:
   string GetClassName() const { return string("XVector"); };
 
   template <typename Func, typename... Args>
-  void ForEach(Func func, Args... args){
+  void Foreach2(Func func, Args&& ... args){
     for (size_t i = 0; i < m_size; ++i)
-        func(m_data[i], args...);
+      func(m_data[i], std::forward<Args>(args)...);
   }
-  void ForEachOld(void (*func)(value_type &));
+  void ForEach1(void (*func)(value_type &)); // Old style
 };
 
 template <typename Traits>
-void XVector<Traits>::ForEachOld(void (*func)(value_type &)) {
+void XVector<Traits>::ForEach1(void (*func)(value_type &)) {
   for (size_t i = 0; i < m_size; ++i)
     func(m_data[i]);
 }
 
-template <typename Traits>
-void XVector<Traits>::Resize() {
-    scoped_lock lock(mtx);
-    size_t newCapacity = (m_capacity == 0) ? 1 : m_capacity * 2;
-    value_type *newData = new value_type[newCapacity];
-    for (size_t i = 0; i < m_size; ++i)
-        newData[i] = m_data[i];
-    delete[] m_data;
-    m_data = newData;
-    m_capacity = newCapacity;
+template <typename Traits> void XVector<Traits>::Resize() {
+  scoped_lock lock(mtx);
+  size_t newCapacity = (m_capacity == 0) ? 1 : m_capacity * 2;
+  value_type *newData = new value_type[newCapacity];
+  for (size_t i = 0; i < m_size; ++i)
+    newData[i] = m_data[i];
+  delete[] m_data;
+  m_data = newData;
+  m_capacity = newCapacity;
 }
 
 template <typename Traits>
 void XVector<Traits>::PushBack(const value_type &value) {
-    if (m_size == m_capacity)
-        Resize();
-    scoped_lock lock(mtx);
-    m_data[m_size++] = value;
+  if (m_size == m_capacity)
+    Resize();
+  scoped_lock lock(mtx);
+  m_data[m_size++] = value;
 }
 
 template <typename Traits>
