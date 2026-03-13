@@ -17,8 +17,9 @@ template <typename Traits> class XVector {
 public:
   using value_type = typename Traits::value_type;
 
-  // --- 1. Definir el "Node" interno requerido por general_iterator ---
+
   // general_iterator requiere que el contenedor defina "Node"
+  // Es mejor para otros tipos de estructuras como arboles, listas_enlazadas
   struct Node {
       using value_type = typename Traits::value_type;
       value_type data;

@@ -126,13 +126,40 @@ ostream &operator<<(ostream &os, XVector<Traits> &v) {
 }
 
 // FIXME: No se implemento correctamente
-// Operador para leer un XVector desde un stream
+// Operador para leer un XVector desde un stream respetando su formato toString "ClassName:[elem1 elem2 ...]"
+// Muchos problemas en el Classname con [] se deberia cargar de y otro formato mas simple
 template <typename Traits>
 istream &operator>>(istream &is, XVector<Traits> &v) {
-  // value_type value;
-  // while (is >> value) {
-  //     v.PushBack(value);
-  // }
+  string token;
+
+  getline(is, token, '['); 
+  
+  if (!is) return is; 
+
+  
+  while (is >> token) {
+      bool end_reached = false;
+      
+
+      if (!token.empty() && token.back() == ']') {
+          token.pop_back(); 
+          end_reached = true;
+      }
+
+     
+      if (!token.empty()) {
+          typename Traits::value_type value;
+          stringstream sstoken(token);
+          sstoken >> value;
+          v.PushBack(value);
+      }
+
+      
+      if (end_reached) {
+          break; 
+      }
+  }
+
   return is;
 }
 
