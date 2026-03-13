@@ -6,6 +6,8 @@
 #include "complex.h"
 #include "geometry.h"
 #include "containers/xvector.h"
+#include "containers/xvectoriterator.h"
+
 
 using namespace std;
 
@@ -19,5 +21,6 @@ int main(){
     // DemoComplex();
     // DemoShapes();
     DemoVector();
+    DemoXVectorIterator(); 
     return 0;
 }

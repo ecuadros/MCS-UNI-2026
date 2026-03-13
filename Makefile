@@ -12,7 +12,8 @@ SRCS = main.cpp util.cpp Pointers.cpp \
 	   geometry/circle.cpp \
 	   geometry/triangle.cpp \
 	   geometry/square.cpp \
-	   containers/xvector.cpp
+	   containers/xvector.cpp \
+	   containers/xvectoriterator.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
