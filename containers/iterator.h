@@ -33,7 +33,16 @@ public:
     bool operator!=(IteratorBase iter)   { return !(*this == iter);        }
     value_type &operator*()              { return m_pNode->getDataRef();   }
     value_type *operator->()             { return m_pNode->getDataPtr();   }
+    
+    // Pre-incremento (++it) - Debe ser implementado por la clase hija
     virtual IteratorBase &operator++()    = 0;
+
+    // Post-incremento (it++) - Provisto genéricamente para todas las clases hijas
+    IteratorBase operator++(int) {
+        IteratorBase temp = *static_cast<IteratorBase*>(this);
+        ++(*this); // Llama al pre-incremento de la clase hija
+        return temp;
+    }
 };
 
 #endif
