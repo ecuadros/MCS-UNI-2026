@@ -1,74 +1,96 @@
 #include "tree.h"
 
-Node::Node(int valor) {
-    data = valor;
-    left = nullptr;
-    right = nullptr;
+template <typename T>
+Tree<T>::Tree() : root(nullptr) {}
+
+template <typename T>
+Tree<T>::~Tree() {
+    clear(root);
 }
 
-Tree::Tree() {
-    root = nullptr;
-}
-
-Node* Tree::insertar(Node* node, int valor) {
+template <typename T>
+typename Tree<T>::Node* Tree<T>::insertar(Node* node, T valor) {
     if (node == nullptr) {
         return new Node(valor);
     }
     
     if (valor < node->data) {
         node->left = insertar(node->left, valor);
-    }
-    else if (valor > node->data) {
+    } else if (valor > node->data) {
         node->right = insertar(node->right, valor);
     }
     
     return node;
 }
 
-void Tree::insertar(int valor) {
+template <typename T>
+void Tree<T>::insertar(T valor) {
     root = insertar(root, valor);
 }
 
-Node* Tree::getRoot() const {
-    return root;
-}
-
-
-// FUNCIÓN ITERADORA en orden
-void iterarInOrder(Node* nodo, ostream& os) {
-    if (nodo == nullptr) {
-        return;
+template <typename T>
+void Tree<T>::clear(Node* node) {
+    if (node) {
+        clear(node->left);
+        clear(node->right);
+        delete node;
     }
-    
-    // Primero izquierda con los numeros menores
-    iterarInOrder(nodo->left, os);
-    
-    //nodo actual
-    os << nodo->data << " ";
-    
-    // derecha con los numeros mayores
-    iterarInOrder(nodo->right, os);
 }
+
+template <typename T>
+typename Tree<T>::iterator Tree<T>::begin() const {
+    return iterator(this, root);
+}
+
+template <typename T>
+typename Tree<T>::iterator Tree<T>::end() const {
+    return iterator(this, nullptr);
+}
+
+// Instanciación explícita para int
+template class Tree<int>;
 
 void Demo_iterarInOrder_hipo(){
-    Tree arbol;
+
+Tree<int> arbol;
     
-    
-    // Insertar nodos
-    cout << "Insertando nodos en el arbol..." << endl;
-    arbol.insertar(50);
-    arbol.insertar(30);
-    arbol.insertar(70);
-    arbol.insertar(20);
-    arbol.insertar(40);
-    arbol.insertar(60);
-    arbol.insertar(80);
-    arbol.insertar(25);
-    arbol.insertar(35);
-    arbol.insertar(75);
-    
-    cout << "\n Numeros del arbol en orden: ";
-    iterarInOrder(arbol.getRoot(), cout);
+    // Insertamos números
+    cout << "Insertando números: ";
+    int numeros[] = {50, 30, 70, 20, 40, 60, 80, 25, 35, 75};
+    for (int num : numeros) {
+        cout << num << " ";
+        arbol.insertar(num);
+    }
     cout << endl;
     
-} 
+    // Usando el iterador in-order (estilo tradicional)
+    cout << "\nRecorrido in-order (estilo tradicional): ";
+    for (Tree<int>::iterator it = arbol.begin(); it != arbol.end(); ++it) {
+        cout << *it << " ";
+    }
+    cout << endl;
+    
+    // Usando auto (más simple)
+    cout << "Recorrido in-order (con auto): ";
+    for (auto it = arbol.begin(); it != arbol.end(); ++it) {
+        cout << *it << " ";
+    }
+    cout << endl;
+    
+    // Usando range-based for loop (C++11)
+    cout << "Recorrido in-order (range-based for): ";
+    for (int valor : arbol) {
+        cout << valor << " ";
+    }
+    cout << endl;
+    
+    // Demostración manual paso a paso
+    cout << "\nDemostración manual del iterador:" << endl;
+    auto it = arbol.begin();
+    cout << "Primer elemento: " << *it << endl;
+    ++it;
+    cout << "Segundo elemento: " << *it << endl;
+    ++it;
+    cout << "Tercer elemento: " << *it << endl;
+    
+}
