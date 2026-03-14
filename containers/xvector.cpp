@@ -30,8 +30,16 @@ void DemoVector() {
   v1.Foreach2(AddX2<T1>, 3, 5); // Add 3+5=8 to each element
   cout << "AddX2: " << v1 << endl;
 
+
+  // Iterar con iteradores
+  cout << "\n   Iterando con iterator  \n";
+  for (auto it = v1.Begin(); it != v1.End(); ++it) {
+    cout << *it << " ";
+  }
+  cout << endl;
+
   // v1.ForEach1(&Add);
-  cout << v1 << "Otro texto: " << x << endl;
+  cout << v1 << endl << "Otro texto: " << x << endl;
 
   XVector<VectorTraits<T2>> v2;
   v2.PushBack(3.5);
@@ -39,6 +47,7 @@ void DemoVector() {
   v2.PushBack(1.5);
   // v2.ForEach1(&Add);
   v2.Foreach2(AddX1<T2>, cout);
+  cout << endl;
   cout << v2 << endl;
 
   // v2.ForEach1([](T2 &val) { val += 10; });
@@ -55,6 +64,7 @@ void DemoVector() {
   v3.PushBack("2026");
   // v3.ForEach1(&Add);
   v3.Foreach2(AddX1<T3>, cout);
+  cout << endl;
   cout << v3 << endl;
 
   ofstream of("Output.txt");

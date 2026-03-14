@@ -15,25 +15,31 @@ protected:
     Container *m_pContainer;    
     Node      *m_pNode;
 public:
-    general_iterator(Container *pContainer, Node *pNode)
+    general_iterator(Container *pContainer = nullptr, Node *pNode = nullptr)
         : m_pContainer(pContainer), m_pNode(pNode) {}
-    general_iterator(myself &other) 
+
+    general_iterator(const myself &other) 
           : m_pContainer(other.m_pContainer), m_pNode(other.m_pNode){}
+
     general_iterator(myself &&other) // Move constructor
-          {   m_pContainer = move(other.m_pContainer);
-              m_pNode      = move(other.m_pNode);
-          }
-    IteratorBase operator=(IteratorBase &iter)
-          {   m_pContainer = move(iter.m_pContainer);
-              m_pNode      = move(iter.m_pNode);
-              return *(IteratorBase *)this; // Pending static_cast?
+        : m_pContainer(std::move(other.m_pContainer)), 
+          m_pNode(std::move(other.m_pNode)) {}
+        //   {   m_pContainer = move(other.m_pContainer);
+        //       m_pNode      = move(other.m_pNode);
+        //   }
+
+    IteratorBase &operator=(const myself &iter)
+          {   m_pContainer = iter.m_pContainer;
+              m_pNode      = iter.m_pNode;
+              return static_cast<IteratorBase&>(*this);
           }
 
-    bool operator==(IteratorBase iter)   { return m_pNode == iter.m_pNode; }
-    bool operator!=(IteratorBase iter)   { return !(*this == iter);        }
-    value_type &operator*()              { return m_pNode->getDataRef();   }
-    value_type *operator->()             { return m_pNode->getDataPtr();   }
-    virtual IteratorBase &operator++()    = 0;
+    bool operator==(const IteratorBase &iter) const  { return m_pNode == iter.m_pNode; }
+    bool operator!=(const IteratorBase &iter) const  { return !(*this == iter);        }
+    value_type &operator*() const { return m_pNode->getDataRef();   }
+    value_type *operator->() const { return m_pNode->getDataPtr();   }
+    virtual IteratorBase &operator++() = 0;
+    virtual ~general_iterator() = default;
 };
 
 #endif
