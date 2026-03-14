@@ -5,16 +5,50 @@
 #include <mutex>
 #include <sstream>
 #include <string>
+#include "iterator.h"
 
 using namespace std;
 
 template <typename T> struct VectorTraits { using value_type = T; };
 
 template <typename Traits> class XVector {
+
+public:
   using value_type = typename Traits::value_type;
 
+  //NODO
+  struct Node {
+    using value_type = typename Traits::value_type;
+    value_type data;
+
+    Node() = default;
+    Node(const value_type &val) : data(val) {}
+
+    value_type &getDataRef() { return data; }
+    value_type *getDataPtr() { return &data; }
+  };
+
+//ITERATOR
+class iterator : public general_iterator<XVector<Traits>, iterator> {
+  using base = general_iterator<XVector<Traits>, iterator>;
+public:
+  iterator(XVector<Traits> *pContainer = nullptr, Node *pNode = nullptr)
+      : base(pContainer, pNode) {}
+
+  iterator &operator++() override{
+    ++this->m_pNode;
+    return *this;
+  }
+
+  iterator operator++(int) {
+    iterator temp = *this;
+    ++(*this);
+    return temp;
+  }
+};
+
 private:
-  value_type *m_data;
+  Node *m_data;
   size_t m_size;
   size_t m_capacity;
 
@@ -31,26 +65,34 @@ public:
   string toString() const;
   string GetClassName() const { return string("XVector"); };
 
+  //ADD: Iterators
+  iterator Begin() { return iterator(this, m_data); }
+  iterator End() { return iterator(this, m_data + m_size); }
+
   template <typename Func, typename... Args>
   void Foreach2(Func func, Args&& ... args){
-    for (size_t i = 0; i < m_size; ++i)
-      func(m_data[i], std::forward<Args>(args)...);
+    for (size_t i = 0; i < m_size; ++i){
+      func(m_data[i].data, std::forward<Args>(args)...);
+    }
   }
   void ForEach1(void (*func)(value_type &)); // Old style
 };
 
 template <typename Traits>
 void XVector<Traits>::ForEach1(void (*func)(value_type &)) {
-  for (size_t i = 0; i < m_size; ++i)
+  for (size_t i = 0; i < m_size; ++i){
     func(m_data[i]);
+  }
 }
 
+// Resize the vector when capacity is reached
 template <typename Traits> void XVector<Traits>::Resize() {
   scoped_lock lock(mtx);
   size_t newCapacity = (m_capacity == 0) ? 1 : m_capacity * 2;
-  value_type *newData = new value_type[newCapacity];
-  for (size_t i = 0; i < m_size; ++i)
+  Node *newData = new Node[newCapacity];
+  for (size_t i = 0; i < m_size; ++i) {
     newData[i] = m_data[i];
+  }
   delete[] m_data;
   m_data = newData;
   m_capacity = newCapacity;
@@ -69,23 +111,24 @@ typename Traits::value_type &XVector<Traits>::operator[](size_t index) {
   if (index >= m_size) {
     throw out_of_range("Index out of range");
   }
-  return m_data[index];
+  return m_data[index].data;
 }
 
 template <typename Traits> string XVector<Traits>::toString() const {
   stringstream ss;
-  auto size = Size();
+  // auto size = Size();
   ss << GetClassName() << ":[";
-  for (size_t i = 0; i < size - 1; ++i)
-    ss << m_data[i] << " ";
-  if (size > 0)
-    ss << m_data[size - 1];
+  for (size_t i = 0; i < m_size; ++i){
+    ss << m_data[i].data;
+    if (i + 1 < m_size) ss << " ";
+    ss << m_data[m_size - 1].data;
+  }
   ss << "]";
   return ss.str();
 }
 
 template <typename Traits>
-ostream &operator<<(ostream &os, XVector<Traits> &v) {
+ostream &operator<<(ostream &os, const XVector<Traits> &v) {
   return os << v.toString();
 }
 
