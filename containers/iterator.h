@@ -29,7 +29,7 @@ public:
               return *(IteratorBase *)this; // Pending static_cast?
           }
 
-    bool operator==(IteratorBase iter)   { return m_pNode == iter.m_pNode; }
+    bool operator==(IteratorBase iter)   { return m_pNode->getDataPtr() == iter.m_pNode->getDataPtr(); }
     bool operator!=(IteratorBase iter)   { return !(*this == iter);        }
     value_type &operator*()              { return m_pNode->getDataRef();   }
     value_type *operator->()             { return m_pNode->getDataPtr();   }
