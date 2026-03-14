@@ -62,4 +62,11 @@ void DemoVector() {
   of << v2 << endl;
   of << v3 << endl;
   of.close();
+
+ cout << "Prueba iteradores: " << endl;
+  for (auto it = v1.begin(); it != v1.end(); ++it)
+    cout << *it << " ";
+  cout << endl;
+  for (auto it = v3.begin(); it != v3.end(); ++it)
+    cout << *it << " ";
 }

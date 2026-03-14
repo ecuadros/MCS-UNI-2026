@@ -5,6 +5,7 @@
 #include <mutex>
 #include <sstream>
 #include <string>
+#include "vIterator.h"
 
 using namespace std;
 
@@ -12,7 +13,7 @@ template <typename T> struct VectorTraits { using value_type = T; };
 
 template <typename Traits> class XVector {
   using value_type = typename Traits::value_type;
-
+  using iterator = vIterator<Traits>;
 private:
   value_type *m_data;
   size_t m_size;
@@ -21,6 +22,16 @@ private:
   mutex mtx;
 
 public:
+  struct Node {
+    using value_type = typename Traits::value_type;
+
+    value_type* data;                           // Puntero a los datos almacenados en el nodo
+    
+    Node(value_type* d = nullptr) : data(d) {}  // Constructor para inicializar el nodo con un puntero a datos
+    value_type& getDataRef() { return *data; }
+    value_type* getDataPtr() { return data; }
+  };
+
   XVector() : m_data(nullptr), m_size(0), m_capacity(0) {}
   virtual ~XVector() { delete[] m_data; }
 
@@ -37,7 +48,11 @@ public:
       func(m_data[i], std::forward<Args>(args)...);
   }
   void ForEach1(void (*func)(value_type &)); // Old style
+
+  iterator begin() {return iterator(this, new Node(&m_data[0])); }
+  iterator end()   {return iterator(this, new Node(&m_data[m_size])); }
 };
+
 
 template <typename Traits>
 void XVector<Traits>::ForEach1(void (*func)(value_type &)) {
