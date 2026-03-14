@@ -6,6 +6,7 @@
 #include "complex.h"
 #include "geometry.h"
 #include "containers/xvector.h"
+#include "tree.h"
 
 using namespace std;
 
@@ -19,5 +20,6 @@ int main(){
     // DemoComplex();
     // DemoShapes();
     DemoVector();
+    Demo_iterarInOrder_hipo();
     return 0;
 }
